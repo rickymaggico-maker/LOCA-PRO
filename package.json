@@ -1,0 +1,55 @@
+{
+  "name": "loca-pro",
+  "version": "2.0.3",
+  "description": "LOCA PRO Desktop",
+  "main": "main.js",
+  "author": "Riccardo Maggi",
+  "license": "UNLICENSED",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win nsis"
+  },
+  "dependencies": {
+    "electron-log": "^5.4.4",
+    "electron-updater": "^6.8.9"
+  },
+  "devDependencies": {
+    "electron": "31.7.7",
+    "electron-builder": "24.13.3"
+  },
+  "build": {
+    "appId": "it.locapro.desktop",
+    "productName": "LOCA PRO",
+    "asar": true,
+    "files": [
+      "main.js",
+      "preload.js",
+      "index.html",
+      "assets/**/*"
+    ],
+    "directories": {
+      "buildResources": "assets",
+      "output": "dist"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "rickymaggico-maker",
+        "repo": "LOCA-PRO"
+      }
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/loca-pro.ico",
+      "artifactName": "LOCA PRO Setup ${version}.${ext}"
+    },
+    "nsis": {
+      "oneClick": true,
+      "perMachine": false,
+      "createDesktopShortcut": "always",
+      "createStartMenuShortcut": true,
+      "shortcutName": "LOCA PRO",
+      "deleteAppDataOnUninstall": false
+    }
+  }
+}
