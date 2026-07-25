@@ -1,13 +1,14 @@
 {
   "name": "loca-pro",
-  "version": "2.0.4",
+  "version": "0.0.1",
   "description": "LOCA PRO Desktop",
   "main": "main.js",
   "author": "Riccardo Maggi",
   "license": "UNLICENSED",
   "scripts": {
     "start": "electron .",
-    "build": "electron-builder --win nsis"
+    "build": "electron-builder --win nsis",
+    "release": "electron-builder --win nsis --publish always"
   },
   "dependencies": {
     "electron-log": "^5.4.4",
@@ -51,5 +52,8 @@
       "shortcutName": "LOCA PRO",
       "deleteAppDataOnUninstall": false
     }
+  },
+  "allowScripts": {
+    "electron@31.7.7": true
   }
 }
