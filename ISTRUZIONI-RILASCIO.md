@@ -1,45 +1,35 @@
-# LOCA PRO 0.0.1
+# LOCA PRO 0.0.2
 
-Questa versione avvia la nuova numerazione di LOCA PRO e abilita il controllo
-automatico degli aggiornamenti tramite GitHub Releases.
+Questa versione introduce la nuova Dashboard operativa:
 
-## Prima installazione della nuova numerazione
+- widget giornaliero con ora, data e agenda dalle 08:00 alle 20:00;
+- attività e appuntamenti collegati allo stesso archivio del Calendario;
+- attività senza orario raccolte nella sezione “Tutto il giorno”;
+- clic su una fascia oraria per preparare una nuova attività;
+- LOCA Regia con priorità generate da attività e scadenze reali;
+- colonna Prossime scadenze uniformata allo stile della Dashboard.
 
-Il passaggio dalla vecchia versione `2.0.4` alla nuova `0.0.1` deve essere fatto
-manualmente, perché `0.0.1` è numericamente inferiore a `2.0.4`.
+## Creazione dell'aggiornamento
 
 1. Aprire PowerShell nella cartella del progetto.
-2. Eseguire `npm.cmd install`.
+2. Eseguire `npm.cmd install` solo se richiesto o se manca la cartella `node_modules`.
 3. Eseguire `npm.cmd run build`.
-4. Installare il file `dist/LOCA-PRO-Setup-0.0.1.exe`.
+4. Controllare che nella cartella `dist` siano presenti i tre file della versione 0.0.2.
 
-I dati locali restano associati alla stessa applicazione e non vengono eliminati
-dall'installazione.
+## Pubblicazione della Release v0.0.2
 
-## Pubblicazione della Release v0.0.1
-
-Creare su GitHub una nuova Release con tag `v0.0.1` e allegare dalla cartella
+Creare su GitHub una nuova Release con tag `v0.0.2` e allegare dalla cartella
 `dist` tutti questi file:
 
-- `LOCA-PRO-Setup-0.0.1.exe`
-- `LOCA-PRO-Setup-0.0.1.exe.blockmap`
+- `LOCA-PRO-Setup-0.0.2.exe`
+- `LOCA-PRO-Setup-0.0.2.exe.blockmap`
 - `latest.yml`
 
 La Release deve essere pubblicata, non lasciata come bozza.
 
-## Aggiornamenti successivi
-
-Per ogni nuova versione:
-
-1. aumentare la versione in `package.json`, per esempio da `0.0.1` a `0.0.2`;
-2. eseguire nuovamente `npm.cmd run build`;
-3. creare e pubblicare la Release GitHub con lo stesso numero, per esempio
-   `v0.0.2`;
-4. allegare Setup, blockmap e `latest.yml`.
-
-LOCA PRO controllerà automaticamente la disponibilità della nuova versione
-all'avvio. Il controllo può essere avviato anche manualmente dal pulsante
-Aggiornamenti.
+Una volta pubblicata, chi usa LOCA PRO 0.0.1 potrà ricevere la 0.0.2 dal pulsante
+**Aggiornamenti** oppure tramite il controllo automatico all'avvio. I dati locali
+non vengono cancellati dall'aggiornamento.
 
 ## Requisito GitHub
 

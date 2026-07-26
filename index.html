@@ -2457,6 +2457,185 @@ margin-right:auto!important;
 }
 </style>
 
+<style id="locapro-dashboard-regia-v002">
+/* Dashboard 0.0.2 — agenda giornaliera, LOCA Regia e scadenze coordinate */
+body:has(#dashboard.active) main{
+  height:calc(100vh - var(--lp-final-header))!important;
+  min-height:0!important;
+  padding:14px 20px!important;
+  overflow:hidden!important;
+}
+#dashboard,#dashboard .apple-home{height:100%!important;min-height:0!important;overflow:hidden!important}
+#dashboard .apple-home{
+  max-width:1480px!important;
+  display:grid!important;
+  grid-template-rows:auto minmax(0,1fr)!important;
+  gap:12px!important;
+}
+#dashboard .dashboard-greeting{
+  min-height:48px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:18px;
+  padding:0 4px;
+}
+#dashboard .dashboard-greeting h1{
+  margin:0;
+  color:#202936;
+  font-size:25px;
+  line-height:1.08;
+  font-weight:780;
+  letter-spacing:-.7px;
+}
+#dashboard .dashboard-greeting p{margin:5px 0 0;color:#788593;font-size:11px}
+#dashboard .dashboard-greeting-actions{display:flex;align-items:center;gap:8px}
+#dashboard .dashboard-grid{
+  min-height:0;
+  display:grid;
+  grid-template-columns:minmax(285px,.9fr) minmax(350px,1.12fr) minmax(285px,.82fr);
+  gap:12px;
+  overflow:hidden;
+}
+#dashboard .dashboard-panel{
+  min-width:0;
+  min-height:0;
+  height:100%;
+  display:flex;
+  flex-direction:column;
+  padding:0!important;
+  overflow:hidden;
+  background:#fff!important;
+  border:1px solid #dbe2e8!important;
+  border-radius:20px!important;
+  box-shadow:0 10px 26px rgba(31,45,61,.055)!important;
+}
+#dashboard .dashboard-panel-head{
+  min-height:76px;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:12px;
+  padding:14px 16px;
+  border-bottom:1px solid #e4e9ee;
+}
+#dashboard .dashboard-panel-title{display:flex;align-items:center;gap:11px;min-width:0}
+#dashboard .dashboard-panel-icon{
+  width:37px;height:37px;flex:0 0 auto;display:grid;place-items:center;
+  border-radius:12px;background:#eef5f8;color:#225f79;font-size:17px;font-weight:800
+}
+#dashboard .dashboard-panel-head h2{margin:0;color:#202936;font-size:16px;font-weight:780;letter-spacing:-.25px}
+#dashboard .dashboard-panel-head p{margin:3px 0 0;color:#7b8792;font-size:10px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#dashboard .dashboard-icon-button{
+  width:32px;height:32px;padding:0!important;border:1px solid #dbe2e8!important;border-radius:50%!important;
+  background:#f7f9fb!important;color:#344454!important;box-shadow:none!important;font-size:16px!important
+}
+#dashboard .dashboard-text-button{
+  min-height:32px;padding:0 11px!important;border:1px solid #dbe2e8!important;border-radius:10px!important;
+  background:#f7f9fb!important;color:#344454!important;box-shadow:none!important;font-size:10px!important;font-weight:760!important
+}
+
+/* Widget Oggi */
+#dashboard .today-panel .dashboard-panel-head{min-height:112px;align-items:flex-start}
+#dashboard .today-clock{font-size:34px;line-height:.95;font-weight:790;letter-spacing:-1.5px;color:#202936;font-variant-numeric:tabular-nums}
+#dashboard .today-date{margin-top:7px;color:#627180;font-size:11px;font-weight:680;text-transform:capitalize}
+#dashboard .today-nav{display:flex;gap:6px}
+#dashboard .all-day-strip{
+  flex:0 0 auto;display:grid;grid-template-columns:58px minmax(0,1fr);gap:8px;
+  min-height:49px;padding:8px 12px;border-bottom:1px solid #e7ebef;background:#fafbfc
+}
+#dashboard .all-day-label{padding-top:4px;color:#8a96a1;font-size:9px;font-weight:780;text-transform:uppercase}
+#dashboard .all-day-items{display:flex;gap:5px;align-items:flex-start;overflow:auto}
+#dashboard .all-day-task{
+  max-width:180px;padding:5px 8px;border:0;border-radius:8px;background:#eaf4f7;color:#24586d;
+  font-size:9.5px;font-weight:750;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;cursor:pointer
+}
+#dashboard .all-day-empty{padding:4px 0;color:#a0a8b0;font-size:10px}
+#dashboard .day-timeline{position:relative;flex:1 1 auto;min-height:0;overflow:auto;background:#fff}
+#dashboard .day-timeline-canvas{position:relative;min-height:528px}
+#dashboard .hour-line{position:absolute;left:0;right:0;height:1px;background:#e8ecef}
+#dashboard .hour-label{
+  position:absolute;left:10px;top:-7px;width:39px;color:#8b96a0;background:#fff;
+  font-size:9px;font-weight:700;font-variant-numeric:tabular-nums
+}
+#dashboard .day-events-layer{position:absolute;left:56px;right:10px;top:0;height:528px}
+#dashboard .day-event{
+  position:absolute;left:0;right:0;min-height:31px;padding:6px 8px;border:0;border-left:3px solid #2e7180;
+  border-radius:8px;background:#eaf4f7;color:#234d60;text-align:left;cursor:pointer;overflow:hidden
+}
+#dashboard .day-event.high{border-left-color:#e07a3f;background:#fff1e8;color:#8a4720}
+#dashboard .day-event.done{opacity:.52;text-decoration:line-through}
+#dashboard .day-event strong{display:block;font-size:9.5px;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#dashboard .day-event span{display:block;margin-top:2px;font-size:8px;opacity:.76}
+#dashboard .current-time-line{position:absolute;left:48px;right:8px;height:1px;background:#ef6b4a;z-index:3;pointer-events:none}
+#dashboard .current-time-line::before{content:"";position:absolute;left:-4px;top:-3px;width:7px;height:7px;border-radius:50%;background:#ef6b4a}
+
+/* LOCA Regia */
+#dashboard .regia-head-badge{
+  display:inline-flex;align-items:center;min-height:28px;padding:0 9px;border-radius:999px;
+  background:#eef5f8;color:#276278;font-size:9px;font-weight:800
+}
+#dashboard .regia-summary{flex:0 0 auto;padding:16px;border-bottom:1px solid #e7ebef;background:linear-gradient(145deg,#f4f8fa,#edf4f7)}
+#dashboard .regia-summary-label{color:#2e7180;font-size:9px;font-weight:820;letter-spacing:.12em;text-transform:uppercase}
+#dashboard .regia-summary h3{margin:6px 0 4px;color:#202936;font-size:20px;line-height:1.13;letter-spacing:-.55px}
+#dashboard .regia-summary p{margin:0;color:#70808d;font-size:10px;line-height:1.45}
+#dashboard .regia-list{flex:1 1 auto;min-height:0;overflow:auto;padding:8px 14px 14px}
+#dashboard .regia-item{
+  display:grid;grid-template-columns:32px minmax(0,1fr) auto;gap:10px;align-items:center;
+  padding:11px 2px;border-bottom:1px solid #edf0f3
+}
+#dashboard .regia-item:last-child{border-bottom:0}
+#dashboard .regia-index{
+  width:29px;height:29px;display:grid;place-items:center;border-radius:10px;background:#f1f5f7;
+  color:#496171;font-size:10px;font-weight:820
+}
+#dashboard .regia-item.urgent .regia-index{background:#fff0e8;color:#b85d2c}
+#dashboard .regia-copy{min-width:0}
+#dashboard .regia-copy b{display:block;color:#273340;font-size:10.5px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#dashboard .regia-copy span{display:block;margin-top:3px;color:#7a8792;font-size:9px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#dashboard .regia-action{
+  min-height:29px;padding:0 9px!important;border:1px solid #d9e2e8!important;border-radius:9px!important;
+  background:#fff!important;color:#295c73!important;box-shadow:none!important;font-size:9px!important;font-weight:780!important
+}
+#dashboard .regia-empty{height:100%;display:grid;place-items:center;padding:30px;text-align:center;color:#73818d;font-size:11px;line-height:1.5}
+#dashboard .regia-empty strong{display:block;margin-bottom:5px;color:#263541;font-size:16px}
+
+/* Scadenze, nello stesso linguaggio delle altre due colonne */
+#dashboard .deadlines-panel #dashScadenze{flex:1 1 auto;min-height:0;margin:0!important;padding:7px 14px 14px!important;overflow:auto}
+#dashboard .deadlines-panel #dashScadenze .calcrow{
+  display:grid;grid-template-columns:minmax(0,1fr) auto;gap:9px;align-items:center;
+  padding:11px 2px!important;border-bottom:1px solid #edf0f3!important
+}
+#dashboard .deadlines-panel #dashScadenze .calcrow > span:first-child{min-width:0;color:#33404b;font-size:9.5px;line-height:1.35}
+#dashboard .deadlines-panel #dashScadenze .calcrow > span:first-child b{color:#25333f;font-size:10.5px}
+#dashboard .deadlines-panel #dashScadenze .muted{display:block;margin-top:2px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:8.5px!important}
+#dashboard .deadlines-panel .badge{
+  min-width:68px;justify-content:center;padding:5px 7px!important;border-radius:8px!important;
+  font-size:8.5px!important;font-weight:800!important;white-space:nowrap
+}
+#dashboard .panel-scroll::-webkit-scrollbar{width:5px}
+#dashboard .panel-scroll::-webkit-scrollbar-thumb{background:#c8d1d8;border-radius:99px}
+
+@media(max-height:790px){
+  #dashboard .dashboard-greeting{min-height:40px}
+  #dashboard .dashboard-greeting h1{font-size:22px}
+  #dashboard .dashboard-panel-head{min-height:66px;padding:10px 13px}
+  #dashboard .today-panel .dashboard-panel-head{min-height:90px}
+  #dashboard .today-clock{font-size:29px}
+  #dashboard .regia-summary{padding:12px 14px}
+  #dashboard .regia-summary h3{font-size:17px}
+  #dashboard .day-timeline-canvas,#dashboard .day-events-layer{min-height:456px;height:456px}
+}
+@media(max-width:1180px){
+  body:has(#dashboard.active) main{overflow:auto!important}
+  #dashboard,#dashboard .apple-home{height:auto!important;overflow:visible!important}
+  #dashboard .dashboard-grid{grid-template-columns:1fr 1fr;overflow:visible}
+  #dashboard .deadlines-panel{grid-column:1/-1;min-height:420px}
+  #dashboard .today-panel,#dashboard .regia-panel{min-height:650px}
+}
+</style>
+
 </head>
 <body>
 
@@ -2489,7 +2668,7 @@ margin-right:auto!important;
           <button type="button" onclick="showPage('studio');lpCloseProfileMenu()">Anagrafica studio</button>
           <button type="button" onclick="showPage('backup');lpCloseProfileMenu()">Backup e dati</button>
           <div class="lp-menu-separator"></div>
-          <div class="lp-version-row">LOCA PRO <span>v<span data-locapro-version>0.0.1</span></span></div>
+          <div class="lp-version-row">LOCA PRO <span>v<span data-locapro-version>0.0.2</span></span></div>
         </div>
       </div>
     </div>
@@ -2536,67 +2715,68 @@ margin-right:auto!important;
 
 <section id="dashboard" class="page active">
   <div class="apple-home">
-    <div class="apple-welcome">
+    <div class="dashboard-greeting">
       <div>
-        <div class="apple-kicker">LOCA PRO</div>
-        <h1 id="appleDashboardDate">Data odierna</h1>
-        <p id="appleDashboardClock">--:--</p>
+        <h1 id="dashboardGreeting">Buongiorno, Riccardo</h1>
+        <p id="dashboardSummary">La tua giornata operativa, in un unico sguardo.</p>
       </div>
-      <div class="apple-date" id="appleToday"></div>
-    </div>
-
-    <div class="apple-search no-print" onclick="document.querySelector('[data-page=contratti]').click()">
-      <span>⌕</span><span>Cerca contratti, persone, immobili e documenti…</span><kbd>Ctrl K</kbd>
-    </div>
-
-    <div class="apple-kpis">
-      <div class="apple-stat card" onclick="showPage('contratti')">
-        <div class="apple-stat-top"><span>Unità locate attive</span><span class="apple-stat-icon">▤</span></div>
-        <div class="apple-stat-value" id="kAttivi">0</div><div class="apple-stat-note">Archivio operativo</div>
-      </div>
-      <div class="apple-stat card" onclick="showPage('scadenziario')">
-        <div class="apple-stat-top"><span>Entro 60 giorni</span><span class="apple-stat-icon">◷</span></div>
-        <div class="apple-stat-value" id="kScadenze">0</div><div class="apple-stat-note">Scadenze da presidiare</div>
-      </div>
-      <div class="apple-stat card" onclick="showPage('istatMensile')">
-        <div class="apple-stat-top"><span>ISTAT del mese</span><span class="apple-stat-icon">↗</span></div>
-        <div class="apple-stat-value" id="kIstat">0</div><div class="apple-stat-note">Adeguamenti attivi</div>
-      </div>
-      <div class="apple-stat card" onclick="showPage('scadenziario')">
-        <div class="apple-stat-top"><span>Imposte del mese</span><span class="apple-stat-icon">€</span></div>
-        <div class="apple-stat-value" id="kImposte">0</div><div class="apple-stat-note">Annualità e registrazioni</div>
+      <div class="dashboard-greeting-actions no-print">
+        <button class="dashboard-text-button" onclick="dashboardNewTask()">＋ Nuova attività</button>
       </div>
     </div>
 
-    <div class="apple-main-grid">
-      <div class="apple-calendar card">
-        <div class="apple-panel-head">
-          <div><h2>Calendario</h2><p>La vista centrale delle attività dello studio</p></div>
-          <div class="apple-month-actions no-print">
-            <div class="apple-month-nav">
-              <button class="apple-icon-btn" onclick="appleMoveMonth(-1)" aria-label="Mese precedente">‹</button>
-              <button class="apple-icon-btn" onclick="appleMoveMonth(1)" aria-label="Mese successivo">›</button>
-            </div>
-            <div class="apple-month-title" id="appleMonthTitle"></div>
-            <button class="apple-current-month-btn" onclick="appleGoCurrentMonth()">Mese corrente</button>
+    <div class="dashboard-grid">
+      <div class="dashboard-panel today-panel card">
+        <div class="dashboard-panel-head">
+          <div>
+            <div class="today-clock" id="dashboardClock">--:--</div>
+            <div class="today-date" id="dashboardDayDate">Oggi</div>
+          </div>
+          <div class="today-nav no-print">
+            <button class="dashboard-icon-button" onclick="dashboardMoveDay(-1)" aria-label="Giorno precedente">‹</button>
+            <button class="dashboard-icon-button" onclick="dashboardGoToday()" aria-label="Torna a oggi">•</button>
+            <button class="dashboard-icon-button" onclick="dashboardMoveDay(1)" aria-label="Giorno successivo">›</button>
           </div>
         </div>
-        <div class="apple-weekdays"><div>Lun</div><div>Mar</div><div>Mer</div><div>Gio</div><div>Ven</div><div>Sab</div><div>Dom</div></div>
-        <div class="apple-days" id="appleCalendarDays"></div>
+        <div class="all-day-strip">
+          <div class="all-day-label">Tutto<br>il giorno</div>
+          <div class="all-day-items" id="dashboardAllDay"></div>
+        </div>
+        <div class="day-timeline panel-scroll" id="dashboardTimeline"></div>
       </div>
 
-      <div class="apple-side">
-        <div class="apple-side-card card">
-          <div class="apple-panel-head">
+      <div class="dashboard-panel regia-panel card">
+        <div class="dashboard-panel-head">
+          <div class="dashboard-panel-title">
+            <div class="dashboard-panel-icon">✦</div>
+            <div><h2>LOCA Regia</h2><p>Il programma prepara le priorità per te</p></div>
+          </div>
+          <span class="regia-head-badge" id="regiaBadge">Tutto sotto controllo</span>
+        </div>
+        <div class="regia-summary">
+          <div class="regia-summary-label">Da fare adesso</div>
+          <h3 id="regiaTitle">Oggi partirei da qui</h3>
+          <p id="regiaSubtitle">Attività, scadenze e adempimenti ordinati per importanza.</p>
+        </div>
+        <div class="regia-list panel-scroll" id="regiaList"></div>
+      </div>
+
+      <div class="dashboard-panel deadlines-panel card">
+        <div class="dashboard-panel-head">
+          <div class="dashboard-panel-title">
+            <div class="dashboard-panel-icon">◷</div>
             <div><h2>Prossime scadenze</h2><p>In ordine cronologico</p></div>
-            <button class="secondary no-print" onclick="showPage('scadenziario')">Vedi tutti</button>
           </div>
-          <div id="dashScadenze" class="exec-list"></div>
+          <button class="dashboard-text-button no-print" onclick="showPage('scadenziario')">Vedi tutte</button>
         </div>
+        <div id="dashScadenze" class="exec-list panel-scroll"></div>
       </div>
     </div>
 
-    <div class="apple-status"><span>LOCA PRO 2.1.0 · Unità e anagrafiche collegate</span><span>Archivio locale disponibile</span></div>
+    <div hidden>
+      <span id="kAttivi">0</span><span id="kScadenze">0</span>
+      <span id="kIstat">0</span><span id="kImposte">0</span>
+    </div>
   </div>
 </section>
 
@@ -2890,7 +3070,7 @@ margin-right:auto!important;
         <h1>Impostazioni</h1>
         <p>Personalizza LOCA PRO senza modificare i dati dei contratti.</p>
       </div>
-      <div class="lp-settings-badge">Versione <span data-locapro-version>0.0.1</span></div>
+      <div class="lp-settings-badge">Versione <span data-locapro-version>0.0.2</span></div>
     </div>
 
     <div class="lp-settings-layout">
@@ -3042,8 +3222,8 @@ margin-right:auto!important;
         <div class="lp-settings-panel" data-settings-panel="updates">
           <div class="lp-settings-title"><h2>Aggiornamenti</h2><p>Informazioni sulla versione installata.</p></div>
           <div class="lp-setting-card">
-            <div><b>LOCA PRO</b><span>Versione installata <span data-locapro-version>0.0.1</span>. Gli aggiornamenti vengono verificati automaticamente tramite GitHub.</span></div>
-            <span class="lp-version-pill">v<span data-locapro-version>0.0.1</span></span>
+            <div><b>LOCA PRO</b><span>Versione installata <span data-locapro-version>0.0.2</span>. Gli aggiornamenti vengono verificati automaticamente tramite GitHub.</span></div>
+            <span class="lp-version-pill">v<span data-locapro-version>0.0.2</span></span>
           </div>
           <div class="lp-setting-card">
             <div><b>Controlla aggiornamenti</b><span>La verifica automatica è disponibile solo nell’app installata e pacchettizzata.</span></div>
@@ -3205,7 +3385,7 @@ function eliminaContrattiSelezionati(){let ids=idsContrattiSelezionati();if(!ids
 function eliminaContrattoDaElenco(id){let c=getDB().find(x=>x.id===id);let nome=c?((c.codice?'Contratto '+c.codice:'Contratto')+(c.immobile?' — '+c.immobile:'')):'questo contratto';if(confirm('Eliminare definitivamente '+nome+'?\n\nQuesta operazione non può essere annullata.')){setDB(getDB().filter(x=>x.id!==id));renderAll()}}
 function allScadenze(){let out=[];getDB().forEach(c=>{if(c.scadenza)out.push({data:c.scadenza,tipo:'Contratto',c});if(c.scadenzaIstat)out.push({data:c.scadenzaIstat,tipo:'ISTAT',c});if(c.scadenzaImposta)out.push({data:c.scadenzaImposta,tipo:'Imposta',c});if(c.scadenza&&Number(c.preavviso)>0)out.push({data:addMonths(c.scadenza,-Number(c.preavviso)),tipo:'Disdetta',c})});return out.sort((a,b)=>a.data.localeCompare(b.data))}
 function badge(data){let now=new Date();now.setHours(0,0,0,0);let d=new Date(data+'T00:00:00'),days=Math.round((d-now)/86400000),cl=days<0?'overdue':days<=30?'soon':'ok';return `<span class="badge ${cl}">${fmtDate(data)}</span>`}
-function renderDashboard(){let db=getDB(),now=new Date(),today=now.toISOString().slice(0,10),lim=new Date(now.getTime()+60*86400000).toISOString().slice(0,10),ym=today.slice(0,7);$('kAttivi').textContent=db.filter(c=>c.stato==='Attivo').length;$('kScadenze').textContent=allScadenze().filter(x=>x.data>=today&&x.data<=lim).length;$('kIstat').textContent=db.filter(c=>(c.scadenzaIstat||'').slice(0,7)===ym).length;$('kImposte').textContent=db.filter(c=>(c.scadenzaImposta||'').slice(0,7)===ym).length;let a=allScadenze().filter(x=>x.data>=today).slice(0,12);$('dashScadenze').innerHTML=a.length?a.map(x=>`<div class="calcrow"><span><b>${x.tipo}</b> — ${x.c.immobile}<br><span class="muted">${x.c.proprietario} / ${x.c.conduttore}</span></span>${badge(x.data)}</div>`).join(''):'<div class="empty">Nessuna scadenza registrata</div>'}
+function renderDashboard(){let db=getDB(),now=new Date(),today=calendarIso(now),lim=calendarIso(new Date(now.getTime()+60*86400000)),ym=today.slice(0,7);if($('kAttivi'))$('kAttivi').textContent=db.filter(c=>c.stato==='Attivo').length;if($('kScadenze'))$('kScadenze').textContent=allScadenze().filter(x=>x.data>=today&&x.data<=lim).length;if($('kIstat'))$('kIstat').textContent=db.filter(c=>(c.scadenzaIstat||'').slice(0,7)===ym).length;if($('kImposte'))$('kImposte').textContent=db.filter(c=>(c.scadenzaImposta||'').slice(0,7)===ym).length;let a=allScadenze().filter(x=>x.data>=today).slice(0,12);if($('dashScadenze'))$('dashScadenze').innerHTML=a.length?a.map(x=>`<div class="calcrow"><span><b>${x.tipo}</b> — ${x.c.immobile}<br><span class="muted">${x.c.proprietario} / ${x.c.conduttore}</span></span>${badge(x.data)}</div>`).join(''):'<div class="empty">Nessuna scadenza registrata</div>';if(typeof renderDashboardExperience==='function')renderDashboardExperience()}
 function renderScadenziario(){let ym=val('meseScad'),tipo=val('tipoScad'),a=allScadenze().filter(x=>(!ym||x.data.slice(0,7)===ym)&&(!tipo||x.tipo===tipo));$('scadList').innerHTML=a.length?a.map(x=>`<div class="card" style="padding:13px"><div class="calcrow"><span><b>${x.tipo}</b> — ${x.c.immobile}<br><span class="muted">${x.c.proprietario} / ${x.c.conduttore} · ${x.c.codice||'senza codice'}</span></span><span>${badge(x.data)} <button class="secondary no-print" onclick="apri('${x.c.id}')">Apri</button></span></div></div>`).join(''):'<div class="empty">Nessuna scadenza nel periodo selezionato</div>'}
 
 const MESI_ISTAT=['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
@@ -4089,69 +4269,122 @@ function renderAll(){aggiornaModalitaBolletta();renderCalendar();caricaAnagrafic
 <div id="printDocument" class="print-document"><button class="pd-screen-close" onclick="chiudiAnteprimaStampa()">Chiudi anteprima</button><div class="pd-paper" id="printPaper"></div></div>
 
 <script id="locapro-apple-home-js">
-let appleCalendarDate=new Date();
+let dashboardDay=new Date();
 
-function updateAppleDashboardDateTime(){
-  const now=new Date();
-  const dateEl=document.getElementById('appleDashboardDate');
-  const clockEl=document.getElementById('appleDashboardClock');
-
-  if(dateEl){
-    const text=new Intl.DateTimeFormat('it-IT',{
-      weekday:'long',
-      day:'numeric',
-      month:'long',
-      year:'numeric'
-    }).format(now);
-    dateEl.textContent=text.replace(/^./,c=>c.toUpperCase());
+function dashboardIso(d){
+  return [d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
+}
+function dashboardCapitalize(text){return String(text||'').replace(/^./,c=>c.toUpperCase())}
+function dashboardMoveDay(step){dashboardDay.setDate(dashboardDay.getDate()+step);renderDashboardDay()}
+function dashboardGoToday(){dashboardDay=new Date();renderDashboardDay()}
+function dashboardOpenTask(id){
+  const task=calendarGet().find(x=>String(x.id)===String(id));
+  if(!task)return;
+  calendarSelected=task.date;
+  calendarCursor=new Date(task.date+'T12:00:00');
+  calendarCursor=new Date(calendarCursor.getFullYear(),calendarCursor.getMonth(),1);
+  showPage('calendario');
+  renderCalendar();
+  calendarEditTask(id);
+}
+function dashboardNewTask(time){
+  const iso=dashboardIso(dashboardDay);
+  calendarSelected=iso;
+  calendarCursor=new Date(dashboardDay.getFullYear(),dashboardDay.getMonth(),1);
+  showPage('calendario');
+  renderCalendar();
+  calendarResetForm(iso);
+  if(time&&$('calTime'))$('calTime').value=time;
+  setTimeout(()=>$('calTitle')?.focus(),80);
+}
+function dashboardTimelineClick(event){
+  if(event.target.closest('.day-event'))return;
+  const canvas=event.currentTarget,rect=canvas.getBoundingClientRect();
+  const minutes=Math.max(480,Math.min(1200,480+Math.round(((event.clientY-rect.top)/528*720)/15)*15));
+  dashboardNewTask(String(Math.floor(minutes/60)).padStart(2,'0')+':'+String(minutes%60).padStart(2,'0'));
+}
+function updateDashboardClock(){
+  const now=new Date(),clock=document.getElementById('dashboardClock'),greeting=document.getElementById('dashboardGreeting');
+  if(clock)clock.textContent=new Intl.DateTimeFormat('it-IT',{hour:'2-digit',minute:'2-digit',hour12:false}).format(now);
+  if(greeting){
+    const h=now.getHours(),saluto=h<12?'Buongiorno':h<18?'Buon pomeriggio':'Buonasera';
+    greeting.textContent=saluto+', Riccardo';
   }
-
-  if(clockEl){
-    clockEl.textContent=new Intl.DateTimeFormat('it-IT',{
-      hour:'2-digit',
-      minute:'2-digit',
-      hour12:false
-    }).format(now);
-  }
+  renderDashboardCurrentTime();
 }
-
-function appleMoveMonth(step){
-  appleCalendarDate.setDate(1);
-  appleCalendarDate.setMonth(appleCalendarDate.getMonth()+step);
-  renderAppleHomeCalendar();
+function renderDashboardCurrentTime(){
+  const line=document.querySelector('#dashboardTimeline .current-time-line');
+  if(!line)return;
+  const now=new Date(),isToday=dashboardIso(now)===dashboardIso(dashboardDay),minutes=now.getHours()*60+now.getMinutes();
+  if(!isToday||minutes<480||minutes>1200){line.style.display='none';return}
+  line.style.display='block';
+  line.style.top=((minutes-480)/720*528)+'px';
 }
-function appleGoCurrentMonth(){
-  const now=new Date();
-  appleCalendarDate=new Date(now.getFullYear(),now.getMonth(),1);
-  renderAppleHomeCalendar();
-}
-function renderAppleHomeCalendar(){
-  const title=document.getElementById('appleMonthTitle'),grid=document.getElementById('appleCalendarDays'),todayLabel=document.getElementById('appleToday');
-  if(!title||!grid)return;
-  const now=new Date(),fmtMonth=new Intl.DateTimeFormat('it-IT',{month:'long',year:'numeric'});
-  title.textContent=fmtMonth.format(appleCalendarDate).replace(/^./,c=>c.toUpperCase());
-  if(todayLabel)todayLabel.innerHTML='<strong>'+new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'numeric',month:'long'}).format(now).replace(/^./,c=>c.toUpperCase())+'</strong><span>'+now.getFullYear()+'</span>';
-  const y=appleCalendarDate.getFullYear(),m=appleCalendarDate.getMonth(),first=new Date(y,m,1);
-  const mondayIndex=(first.getDay()+6)%7,start=new Date(y,m,1-mondayIndex);
-  let deadlines=[];
-  try{deadlines=typeof allScadenze==='function'?allScadenze():[]}catch(e){}
-  grid.innerHTML=Array.from({length:42},(_,i)=>{
-    const d=new Date(start);d.setDate(start.getDate()+i);
-    const iso=[d.getFullYear(),String(d.getMonth()+1).padStart(2,'0'),String(d.getDate()).padStart(2,'0')].join('-');
-    const count=deadlines.filter(x=>x.data===iso).length;
-    const other=d.getMonth()!==m?' other':'',isToday=iso===[now.getFullYear(),String(now.getMonth()+1).padStart(2,'0'),String(now.getDate()).padStart(2,'0')].join('-')?' today':'';
-    return '<div class="apple-day'+other+isToday+'" onclick="showPage(\'calendario\')"><span>'+d.getDate()+'</span>'+(count?'<div class="dots">'+Array.from({length:Math.min(count,3)},()=>'<i class="dot"></i>').join('')+'</div>':'')+'</div>';
+function renderDashboardDay(){
+  const timeline=document.getElementById('dashboardTimeline'),dateEl=document.getElementById('dashboardDayDate'),allDay=document.getElementById('dashboardAllDay');
+  if(!timeline||!dateEl||!allDay)return;
+  const iso=dashboardIso(dashboardDay),today=dashboardIso(new Date());
+  const label=new Intl.DateTimeFormat('it-IT',{weekday:'long',day:'numeric',month:'long'}).format(dashboardDay);
+  dateEl.textContent=(iso===today?'Oggi · ':'')+dashboardCapitalize(label);
+  const tasks=calendarGet().filter(t=>t.date===iso).sort((a,b)=>(a.time||'99:99').localeCompare(b.time||'99:99'));
+  const withoutTime=tasks.filter(t=>!t.time),timed=tasks.filter(t=>t.time);
+  allDay.innerHTML=withoutTime.length?withoutTime.map(t=>`<button class="all-day-task" onclick="dashboardOpenTask('${t.id}')" title="${calendarEsc(t.title)}">${calendarEsc(t.title)}</button>`).join(''):'<span class="all-day-empty">Nessuna attività</span>';
+  const lines=Array.from({length:13},(_,i)=>{
+    const top=i*44,hour=8+i;
+    return `<div class="hour-line" style="top:${top}px"><span class="hour-label">${String(hour).padStart(2,'0')}:00</span></div>`;
   }).join('');
+  const events=timed.map((t,i)=>{
+    const parts=t.time.split(':').map(Number),minutes=(parts[0]||0)*60+(parts[1]||0);
+    const top=Math.max(2,Math.min(495,(minutes-480)/720*528+3));
+    const cls=(t.priority==='high'?' high':'')+(t.status==='done'?' done':'');
+    return `<button class="day-event${cls}" style="top:${top}px;z-index:${2+i}" onclick="event.stopPropagation();dashboardOpenTask('${t.id}')"><strong>${calendarEsc(t.title)}</strong><span>${calendarEsc(t.time)}${t.link?' · '+calendarEsc(t.link):''}</span></button>`;
+  }).join('');
+  timeline.innerHTML=`<div class="day-timeline-canvas" onclick="dashboardTimelineClick(event)" title="Clicca su un orario per creare una nuova attività">${lines}<div class="day-events-layer">${events}</div><div class="current-time-line"></div></div>`;
+  renderDashboardCurrentTime();
+}
+function dashboardDateDistance(iso){
+  const base=new Date(dashboardIso(new Date())+'T00:00:00'),target=new Date(iso+'T00:00:00');
+  return Math.round((target-base)/86400000);
+}
+function dashboardWhen(iso){
+  const d=dashboardDateDistance(iso);
+  if(d<0)return Math.abs(d)+' gg in ritardo';
+  if(d===0)return 'Oggi';
+  if(d===1)return 'Domani';
+  return 'Tra '+d+' giorni';
+}
+function renderLocaRegia(){
+  const list=document.getElementById('regiaList'),badgeEl=document.getElementById('regiaBadge'),subtitle=document.getElementById('regiaSubtitle');
+  if(!list)return;
+  const today=dashboardIso(new Date()),items=[];
+  calendarGet().filter(t=>t.status!=='done'&&t.date<=today).sort((a,b)=>(a.date+(a.time||'')).localeCompare(b.date+(b.time||''))).forEach(t=>{
+    items.push({urgent:t.date<today||t.priority==='high',title:t.title,detail:(t.date===today?'Attività di oggi':dashboardWhen(t.date))+(t.time?' · '+t.time:''),action:`dashboardOpenTask('${t.id}')`,label:'Apri'});
+  });
+  const sixtyDaysAgo=addMonths(today,-2);
+  allScadenze().filter(x=>x.c?.stato==='Attivo'&&x.data>=sixtyDaysAgo&&x.data<=addMonths(today,1)).forEach(x=>{
+    items.push({urgent:x.data<=today,title:x.tipo+' · '+(x.c.immobile||x.c.codice||'Unità'),detail:dashboardWhen(x.data)+' · '+(x.c.conduttore||x.c.proprietario||''),action:`apri('${x.c.id}')`,label:'Controlla',date:x.data});
+  });
+  items.sort((a,b)=>(b.urgent-a.urgent)||String(a.date||today).localeCompare(String(b.date||today)));
+  const unique=items.filter((x,i,a)=>a.findIndex(y=>y.title===x.title&&y.detail===x.detail)===i).slice(0,4);
+  const urgent=items.filter(x=>x.urgent).length;
+  badgeEl.textContent=urgent?urgent+(urgent===1?' priorità':' priorità'):'Tutto sotto controllo';
+  badgeEl.style.background=urgent?'#fff0e8':'#eef5f8';
+  badgeEl.style.color=urgent?'#a65329':'#276278';
+  if(subtitle)subtitle.textContent=unique.length?'LOCA PRO ha ordinato per te le operazioni che richiedono attenzione.':'Non risultano attività o scadenze urgenti.';
+  list.innerHTML=unique.length?unique.map((x,i)=>`<div class="regia-item${x.urgent?' urgent':''}"><div class="regia-index">${String(i+1).padStart(2,'0')}</div><div class="regia-copy"><b>${calendarEsc(x.title)}</b><span>${calendarEsc(x.detail)}</span></div><button class="regia-action no-print" onclick="${x.action}">${x.label}</button></div>`).join(''):'<div class="regia-empty"><div><strong>Tutto sotto controllo</strong>Quando ci sarà qualcosa da fare, LOCA Regia te lo mostrerà qui.</div></div>';
+}
+function renderDashboardExperience(){
+  updateDashboardClock();
+  renderDashboardDay();
+  renderLocaRegia();
 }
 document.addEventListener('DOMContentLoaded',()=>{
-  renderAppleHomeCalendar();
-  updateAppleDashboardDateTime();
+  renderDashboardExperience();
 });
 setTimeout(()=>{
-  renderAppleHomeCalendar();
-  updateAppleDashboardDateTime();
+  renderDashboardExperience();
 },0);
-setInterval(updateAppleDashboardDateTime,30000);
+setInterval(updateDashboardClock,30000);
 </script>
 
 
