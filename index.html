@@ -159,6 +159,7 @@ main{max-width:none;margin:0 0 0 245px;padding:24px 28px 50px}
 .studio-logo-preview img{max-width:100%;max-height:100%;object-fit:contain}
 .studio-logo-help b{display:block;color:#173b50;font-size:15px;margin-bottom:5px}.studio-logo-help p{margin:0 0 12px;color:#6d7d89;font-size:12px;line-height:1.5}
 .studio-logo-actions{display:flex;flex-wrap:wrap;gap:9px}.logo-upload{display:inline-flex;align-items:center;padding:10px 14px;border-radius:9px;background:#11727a;color:#fff;font-weight:750;cursor:pointer;font-size:12px}
+.studio-signature-box{margin-top:18px}.studio-signature-preview{background:#fff}.studio-signature-preview img{width:100%;height:100%;object-fit:contain}
 
 
 /* LOCA PRO Build 002 — Calendario operativo */
@@ -259,9 +260,45 @@ main{max-width:none;margin:0 0 0 245px;padding:24px 28px 50px}
   .pd-screen-close{display:none!important}
 }
 @media screen{
-  .print-document.previewing{display:block;position:fixed;z-index:99999;inset:0;background:#e9edf2;overflow:auto;padding:30px}
+  .print-document.previewing{display:block;position:fixed;z-index:99999;inset:0;background:#e9edf2;overflow:auto;padding:78px 30px 30px}
   .print-document.previewing>.pd-paper{background:#fff;max-width:900px;min-height:1120px;margin:auto;padding:55px 60px;box-shadow:0 18px 60px rgba(16,24,40,.25)}
-  .pd-screen-close{position:fixed;right:28px;top:22px;z-index:100000;background:#17324d;color:#fff;border:0;border-radius:9px;padding:11px 17px;font-weight:700;cursor:pointer}
+  .pd-preview-toolbar{display:none}
+  .print-document.previewing>.pd-preview-toolbar{display:flex;position:fixed;z-index:100000;top:18px;left:50%;transform:translateX(-50%);align-items:center;justify-content:space-between;gap:20px;width:min(900px,calc(100vw - 60px));padding:10px 12px 10px 17px;border:1px solid #d5dde6;border-radius:13px;background:rgba(255,255,255,.97);box-shadow:0 10px 35px rgba(16,24,40,.18)}
+  .pd-preview-title{font-weight:850;color:#17324d}.pd-preview-title small{display:block;margin-top:2px;color:#667085;font-size:11px;font-weight:600}
+  .pd-preview-actions{display:flex;align-items:center;gap:8px}
+  .pd-preview-actions button{border:1px solid #cbd5df;border-radius:9px;padding:9px 13px;background:#fff;color:#17324d;font-weight:750;cursor:pointer}
+  .pd-preview-actions .primary{border-color:#17324d;background:#17324d;color:#fff}
+  .pd-screen-close{position:static}
+  .print-document.previewing .pd-header{display:flex;justify-content:space-between;align-items:flex-start;border-bottom:2px solid #17324d;padding-bottom:22px;margin-bottom:24px}
+  .print-document.previewing .pd-brand{font-size:27px;font-weight:900;color:#17324d}.print-document.previewing .pd-brand span{color:#2d6e89}
+  .print-document.previewing .pd-office{margin-top:7px;font-size:11px;line-height:1.45;color:#475467}
+  .print-document.previewing .pd-docmeta{text-align:right;font-size:11px;color:#475467;line-height:1.5}.print-document.previewing .pd-docmeta strong{display:block;color:#17212b;font-size:13px}
+  .print-document.previewing .pd-title{font-size:26px;line-height:1.1;margin:0 0 8px;color:#17324d;text-transform:uppercase}
+  .print-document.previewing .pd-subtitle{font-size:13px;color:#667085;margin-bottom:24px}
+  .print-document.previewing .pd-logo{width:190px;height:95px;object-fit:contain;object-position:left center;display:block}
+  .print-document.previewing .pd-table{width:100%;border-collapse:collapse;font-size:11px;table-layout:fixed}
+  .print-document.previewing .pd-table th{background:#17324d!important;color:#fff!important;text-align:left;text-transform:uppercase;font-size:10px;padding:9px 8px;border:1px solid #17324d}
+  .print-document.previewing .pd-table td{padding:9px 8px;border:1px solid #cfd6df;vertical-align:top;word-break:break-word}
+  .print-document.previewing .pd-table .num{text-align:right}.print-document.previewing .pd-table .center{text-align:center}
+  .print-document.previewing .pd-footer{margin-top:28px;border-top:1px solid #cfd6df;padding-top:8px;display:flex;justify-content:space-between;font-size:10px;color:#667085}
+  .print-document.previewing .contract-print{display:flex;flex-direction:column}
+  .print-document.previewing .contract-print .pd-header{padding-bottom:15px;margin-bottom:15px;align-items:center}
+  .print-document.previewing .contract-print .cp-titlebar{display:flex;justify-content:space-between;align-items:end;border-bottom:2px solid #17324d;padding-bottom:9px;margin-bottom:11px}
+  .print-document.previewing .contract-print .cp-title{font-size:22px;font-weight:900;color:#17324d;text-transform:uppercase}
+  .print-document.previewing .contract-print .cp-code{font-size:11px;font-weight:700;color:#475467;text-transform:uppercase}
+  .print-document.previewing .contract-print .cp-summary{display:grid;grid-template-columns:1.15fr .8fr .9fr .9fr;gap:8px;margin-bottom:11px}
+  .print-document.previewing .contract-print .cp-summary>div{border:1px solid #cdd6df;padding:8px 9px;min-height:45px}
+  .print-document.previewing .contract-print .cp-summary small{display:block;font-size:9px;text-transform:uppercase;color:#667085;margin-bottom:3px}
+  .print-document.previewing .contract-print .cp-summary b{font-size:11px;color:#17212b}
+  .print-document.previewing .contract-print .cp-columns{display:grid;grid-template-columns:1fr 1fr;gap:11px;align-items:start}
+  .print-document.previewing .contract-print .cp-section{border:1px solid #cdd6df;margin-bottom:11px}
+  .print-document.previewing .contract-print .cp-section h3{margin:0;background:#eef2f5!important;color:#17324d!important;padding:7px 9px;font-size:10px;text-transform:uppercase;border-bottom:1px solid #cdd6df}
+  .print-document.previewing .contract-print .cp-data{display:grid;grid-template-columns:1fr 1fr;padding:4px 9px}
+  .print-document.previewing .contract-print .cp-item{padding:5px 0;border-bottom:1px solid #edf0f3;min-height:27px}.print-document.previewing .contract-print .cp-item.full{grid-column:1/-1}
+  .print-document.previewing .contract-print .cp-item span{display:block;font-size:8px;text-transform:uppercase;color:#667085;margin-bottom:2px}
+  .print-document.previewing .contract-print .cp-item strong{display:block;font-size:10px;line-height:1.2;color:#17212b;word-break:break-word;white-space:pre-wrap}
+  .print-document.previewing .contract-print .cp-notes{border:1px solid #cdd6df;padding:8px 9px;font-size:10px;line-height:1.25;white-space:pre-wrap}
+  .print-document.previewing .contract-print .cp-footerline{margin-top:12px;padding-top:8px;border-top:1px solid #cdd6df;display:flex;justify-content:space-between;font-size:9px;color:#667085}
 }
 
 /* Contratti attivi e selezione multipla — v1.8 */
@@ -270,20 +307,35 @@ main{max-width:none;margin:0 0 0 245px;padding:24px 28px 50px}
 
 <style id="bill-modern-layout">
 .bill-modern{font-family:Arial,Helvetica,sans-serif;color:#183246;min-height:258mm;padding:0;gap:0}
-.bill-head{display:grid;grid-template-columns:52mm 1fr 43mm;gap:3.5mm;align-items:start;padding-bottom:5mm;margin-bottom:6mm;border-bottom:2px solid #173e56}
+.bill-head{display:grid;grid-template-columns:52mm 1fr 43mm;gap:3.5mm;align-items:start;padding-bottom:var(--bill-head-pad,5mm);margin-bottom:var(--bill-section-gap,6mm);border-bottom:2px solid #173e56}
 .bill-head-brand{padding-right:5mm;min-height:31mm;display:flex;align-items:flex-start;border-right:1px solid #d4e0e7}
 .bill-logo{width:50mm;height:25mm;object-fit:contain;object-position:left top;display:block}
 .bill-fallback-brand{font-size:24pt;font-weight:900;color:#173e56}.bill-fallback-brand span{color:#2d7180}
 .bill-head-office{font-size:8.2pt;line-height:1.55;padding-top:.5mm;color:#536b7b}.bill-office-name{font-size:11.5pt;font-weight:900;color:#173e56;margin-bottom:2mm;letter-spacing:.2px}.bill-contact-line{display:flex;gap:2mm;align-items:flex-start}.bill-contact-icon{width:4mm;color:#2d7180;font-weight:900;text-align:center}
 .bill-head-right{text-align:right;padding-top:2mm}.bill-head-right b{display:block;font-size:9pt;color:#173e56;margin-bottom:2mm;letter-spacing:.4px}.bill-head-right span{font-size:7.5pt;line-height:1.4;color:#607786}
-.bill-recipient-row{display:grid;grid-template-columns:1fr 60mm;gap:8mm;align-items:stretch;margin-bottom:6mm}.bill-recipient{border:1px solid #d0dce3;border-radius:2mm;padding:4mm 5mm;background:#f8fbfc!important;display:flex;flex-direction:column;gap:1.2mm;font-size:9.5pt}.bill-recipient small{font-size:7.5pt;text-transform:uppercase;letter-spacing:.45px;color:#607786}.bill-recipient b{font-size:12pt;color:#173e56}.bill-recipient span{white-space:pre-line;line-height:1.45;color:#455f70}
+.bill-recipient-row{display:grid;grid-template-columns:1fr 60mm;gap:8mm;align-items:stretch;margin-bottom:var(--bill-section-gap,6mm)}.bill-recipient{border:1px solid #d0dce3;border-radius:2mm;padding:var(--bill-block-pad,4mm) 5mm;background:#f8fbfc!important;display:flex;flex-direction:column;gap:1.2mm;font-size:9.5pt}.bill-recipient small{font-size:7.5pt;text-transform:uppercase;letter-spacing:.45px;color:#607786}.bill-recipient b{font-size:12pt;color:#173e56}.bill-recipient span{white-space:pre-line;line-height:1.45;color:#455f70}
 .bill-number-card{border:1px solid #b9cbd5;border-radius:2mm;overflow:hidden;text-align:center}.bill-number-label{background:#173e56!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;padding:3mm;font-size:9pt;font-weight:800;letter-spacing:.3px}.bill-number-card strong{display:block;font-size:13pt;padding:5mm 3mm 2mm;color:#173e56}.bill-number-card span{display:block;font-size:7.7pt;color:#607786}.bill-number-card>b{display:block;font-size:13pt;padding:1mm 2mm 4mm;color:#173e56}
-.bill-info-grid{border:1px solid #cbd8e0;border-radius:2mm;display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:6mm;overflow:hidden}.bill-info-grid>div{padding:4.5mm 5mm;min-height:27mm;border-right:1px solid #dce5ea;display:flex;flex-direction:column;gap:1.5mm}.bill-info-grid>div:last-child{border-right:0}.bill-info-grid small{font-size:7.3pt;font-weight:800;color:#2d7180;letter-spacing:.35px}.bill-info-grid b{font-size:10.2pt;color:#173e56}.bill-info-grid span{font-size:8pt;color:#566e7d;line-height:1.35}
-.bill-table-wrap{border:1px solid #c1d0d9;border-radius:2mm;overflow:hidden;margin-bottom:6mm}.bill-section-title{background:#e9f1f5!important;color:#173e56!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-weight:900;padding:2.8mm 4mm;font-size:8.4pt;letter-spacing:.35px;border-bottom:1px solid #c7d6de}.bill-modern .bp-table{border:0;font-size:9pt}.bill-modern .bp-table th{background:#173e56!important;color:#fff!important;padding:3mm 4mm;border:0}.bill-modern .bp-table th:last-child{text-align:right;width:26%}.bill-modern .bp-table td{padding:3.2mm 4mm;border:0;border-bottom:1px solid #dfe7ec}.bill-modern .bp-table tbody tr:nth-child(even):not(.bill-total-row) td{background:#f7fafb!important}.bill-modern .bill-total-row td{background:#173e56!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:10pt;font-weight:900;border-bottom:0}.bill-modern .bill-total-row td:last-child{font-size:15pt;color:#fff!important}
-.bill-payment-box{border:1px solid #c3d2db;border-radius:2mm;padding:4mm 5mm;display:grid;grid-template-columns:20mm 1fr;gap:5mm;margin-bottom:5mm;background:#f5f9fb!important}.bill-bank-icon{font-size:25pt;color:#2d7180;border-right:1px solid #d0dde4;display:flex;align-items:center;justify-content:center}.bill-payment-content>strong{display:block;color:#173e56;font-size:9pt;margin-bottom:1mm}.bill-payment-content>span{display:block;font-size:7.7pt;margin-bottom:3mm;color:#607786}.bill-payment-grid{display:grid;grid-template-columns:23mm 1fr 20mm 31mm;gap:1.6mm 3mm;font-size:8pt;align-items:start}.bill-payment-grid b{color:#173e56}.bill-payment-grid .wide{grid-column:2/5}.bill-free-payment{white-space:pre-line;margin-top:2mm;font-size:8pt}
-.bill-note-box{border:1px solid #cad7df;border-radius:2mm;padding:3mm 5mm;margin-bottom:4mm;display:grid;grid-template-columns:22mm 1fr;font-size:8pt}.bill-note-box strong{color:#2d7180}.bill-sign-row{display:flex;justify-content:space-between;align-items:flex-end;margin:3mm 3mm 5mm;font-size:8pt;color:#536b7b}.bill-sign-row span:last-child{text-align:right;line-height:1.4;color:#173e56}.bill-bottom{margin-top:auto;border-top:1.4px solid #173e56;padding:3mm 2mm 0;display:flex;justify-content:space-between;font-size:7.5pt;color:#173e56}.bill-software-mark{text-align:right;margin-top:2mm;font-size:6.8pt;color:#8395a1;letter-spacing:.25px}
+.bill-info-grid{border:1px solid #cbd8e0;border-radius:2mm;display:grid;grid-template-columns:1fr 1fr 1fr;margin-bottom:var(--bill-section-gap,6mm);overflow:hidden}.bill-info-grid>div{padding:var(--bill-info-pad,4.5mm) 5mm;min-height:var(--bill-info-height,27mm);border-right:1px solid #dce5ea;display:flex;flex-direction:column;gap:1.5mm}.bill-info-grid>div:last-child{border-right:0}.bill-info-grid small{font-size:7.3pt;font-weight:800;color:#2d7180;letter-spacing:.35px}.bill-info-grid b{font-size:10.2pt;color:#173e56}.bill-info-grid span{font-size:8pt;color:#566e7d;line-height:1.35}
+.bill-table-wrap{border:1px solid #c1d0d9;border-radius:2mm;overflow:hidden;margin-bottom:var(--bill-section-gap,6mm)}.bill-section-title{background:#e9f1f5!important;color:#173e56!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-weight:900;padding:var(--bill-table-title-pad,2.8mm) 4mm;font-size:8.4pt;letter-spacing:.35px;border-bottom:1px solid #c7d6de}.bill-modern .bp-table{border:0;font-size:var(--bill-row-font,9pt)}.bill-modern .bp-table th{background:#173e56!important;color:#fff!important;padding:var(--bill-table-head-pad,3mm) 4mm;border:0}.bill-modern .bp-table th:last-child{text-align:right;width:26%}.bill-modern .bp-table td{padding:var(--bill-row-pad,3.2mm) 4mm;border:0;border-bottom:1px solid #dfe7ec}.bill-modern .bp-table tbody tr:nth-child(even):not(.bill-total-row) td{background:#f7fafb!important}.bill-modern .bill-total-row td{background:#173e56!important;color:#fff!important;-webkit-print-color-adjust:exact;print-color-adjust:exact;font-size:10pt;font-weight:900;border-bottom:0}.bill-modern .bill-total-row td:last-child{font-size:15pt;color:#fff!important}
+.bill-payment-box{border:1px solid #c3d2db;border-radius:2mm;padding:var(--bill-payment-pad,4mm) 5mm;margin-bottom:var(--bill-payment-gap,5mm);background:#f5f9fb!important}.bill-payment-content>strong{display:block;color:#173e56;font-size:9pt;letter-spacing:.35px;padding-bottom:var(--bill-payment-title-pad,2.5mm);border-bottom:1px solid #d6e1e7}.bill-payment-grid{display:grid;grid-template-columns:minmax(0,2fr) minmax(34mm,.8fr);gap:0 7mm;font-size:8pt}.bill-payment-item{padding:var(--bill-payment-row-pad,2.6mm) 0 var(--bill-payment-row-bottom,2.2mm);border-bottom:1px solid #dce5ea;min-width:0}.bill-payment-item.wide{grid-column:1/-1}.bill-payment-item:last-child{border-bottom:0;padding-bottom:.5mm}.bill-payment-item small{display:block;font-size:6.8pt;font-weight:800;letter-spacing:.35px;color:#2d7180;margin-bottom:.8mm}.bill-payment-item b,.bill-payment-item span{display:block;color:#173e56;font-size:8.3pt;line-height:1.4;overflow-wrap:anywhere}.bill-payment-item span{white-space:pre-line}
+.bill-note-box{border:1px solid #cad7df;border-radius:2mm;padding:var(--bill-note-pad,3mm) 5mm;margin-bottom:var(--bill-note-gap,4mm);display:grid;grid-template-columns:22mm 1fr;font-size:8pt}.bill-note-box strong{color:#2d7180}.bill-sign-row{display:grid;grid-template-columns:1fr 72mm;gap:18mm;align-items:end;margin:var(--bill-sign-gap,8mm) 3mm 0;color:#173e56}.bill-date-block{display:flex;align-items:baseline;gap:3mm;padding-bottom:2mm;font-size:8.5pt}.bill-date-block b{font-size:7.5pt;text-transform:uppercase;letter-spacing:.4px;color:#2d7180}.bill-signature-block{text-align:center}.bill-signature-space{height:var(--bill-sign-height,12mm);border-bottom:1px solid #536b7b;display:flex;align-items:flex-end;justify-content:center;padding:0 2mm 1mm}.bill-signature-space img{display:block;max-width:58mm;max-height:var(--bill-sign-image-height,11mm);object-fit:contain}.bill-signature-text{font-size:10pt;font-weight:700;color:#173e56;font-style:italic;line-height:1.1}.bill-signature-label{padding-top:1.4mm;font-size:7.5pt;text-transform:uppercase;letter-spacing:.5px;color:#536b7b}
+.bill-density-compact{--bill-head-pad:3.5mm;--bill-section-gap:4mm;--bill-block-pad:3mm;--bill-info-pad:3.2mm;--bill-info-height:22mm;--bill-table-title-pad:2mm;--bill-table-head-pad:2.1mm;--bill-row-pad:2mm;--bill-row-font:8.3pt;--bill-payment-pad:3mm;--bill-payment-gap:3mm;--bill-payment-title-pad:1.8mm;--bill-payment-row-pad:1.7mm;--bill-payment-row-bottom:1.5mm;--bill-note-pad:2mm;--bill-note-gap:2.5mm;--bill-sign-gap:4mm;--bill-sign-height:9mm;--bill-sign-image-height:8mm}
+.bill-density-dense{--bill-head-pad:2.5mm;--bill-section-gap:2.5mm;--bill-block-pad:2.2mm;--bill-info-pad:2.2mm;--bill-info-height:18mm;--bill-table-title-pad:1.5mm;--bill-table-head-pad:1.5mm;--bill-row-pad:1.25mm;--bill-row-font:7.6pt;--bill-payment-pad:2.2mm;--bill-payment-gap:2mm;--bill-payment-title-pad:1.2mm;--bill-payment-row-pad:1.15mm;--bill-payment-row-bottom:1mm;--bill-note-pad:1.5mm;--bill-note-gap:1.5mm;--bill-sign-gap:2.5mm;--bill-sign-height:7.5mm;--bill-sign-image-height:6.5mm}.bill-density-dense .bill-head{grid-template-columns:44mm 1fr 39mm}.bill-density-dense .bill-logo{width:42mm;height:21mm}.bill-density-dense .bill-head-brand{min-height:24mm}.bill-density-dense .bill-head-office{font-size:7.4pt;line-height:1.35}.bill-density-dense .bill-office-name{font-size:10pt;margin-bottom:1mm}.bill-density-dense .bill-recipient{font-size:8.5pt}.bill-density-dense .bill-recipient b{font-size:10.5pt}.bill-density-dense .bill-number-card strong{font-size:11pt;padding:2.5mm 2mm 1mm}.bill-density-dense .bill-number-card>b{font-size:11pt;padding-bottom:2mm}.bill-density-dense .bill-info-grid b{font-size:9pt}.bill-density-dense .bill-info-grid span{font-size:7.2pt}.bill-density-dense .bill-payment-item b,.bill-density-dense .bill-payment-item span{font-size:7.6pt;line-height:1.25}.bill-density-dense .bill-total-row td:last-child{font-size:12pt}
+.bill-density-ultra{--bill-head-pad:1.5mm;--bill-section-gap:1.5mm;--bill-block-pad:1.4mm;--bill-info-pad:1.4mm;--bill-info-height:14mm;--bill-table-title-pad:1mm;--bill-table-head-pad:1mm;--bill-row-pad:.65mm;--bill-row-font:6.8pt;--bill-payment-pad:1.4mm;--bill-payment-gap:1.2mm;--bill-payment-title-pad:.8mm;--bill-payment-row-pad:.7mm;--bill-payment-row-bottom:.6mm;--bill-note-pad:1mm;--bill-note-gap:1mm;--bill-sign-gap:1.5mm;--bill-sign-height:6mm;--bill-sign-image-height:5mm}.bill-density-ultra .bill-head{grid-template-columns:38mm 1fr 35mm}.bill-density-ultra .bill-logo{width:36mm;height:18mm}.bill-density-ultra .bill-head-brand{min-height:20mm}.bill-density-ultra .bill-head-office{font-size:6.6pt;line-height:1.2}.bill-density-ultra .bill-office-name{font-size:8.8pt;margin-bottom:.5mm}.bill-density-ultra .bill-head-right b{font-size:7.8pt;margin-bottom:.5mm}.bill-density-ultra .bill-head-right span{font-size:6.5pt;line-height:1.2}.bill-density-ultra .bill-recipient{font-size:7.5pt;gap:.5mm}.bill-density-ultra .bill-recipient b{font-size:9.2pt}.bill-density-ultra .bill-number-label{padding:1.5mm;font-size:7.6pt}.bill-density-ultra .bill-number-card strong{font-size:9.5pt;padding:1.5mm 2mm .5mm}.bill-density-ultra .bill-number-card>b{font-size:9.5pt;padding-bottom:1.2mm}.bill-density-ultra .bill-info-grid>div{gap:.6mm}.bill-density-ultra .bill-info-grid small{font-size:6.3pt}.bill-density-ultra .bill-info-grid b{font-size:7.8pt}.bill-density-ultra .bill-info-grid span{font-size:6.4pt;line-height:1.15}.bill-density-ultra .bill-payment-content>strong{font-size:7.5pt}.bill-density-ultra .bill-payment-item small{font-size:5.9pt;margin-bottom:.3mm}.bill-density-ultra .bill-payment-item b,.bill-density-ultra .bill-payment-item span{font-size:6.7pt;line-height:1.12}.bill-density-ultra .bill-total-row td{font-size:8.2pt}.bill-density-ultra .bill-total-row td:last-child{font-size:10.5pt}.bill-density-ultra .bill-note-box{font-size:6.7pt}
 @media screen{.bill-preview-sheet{padding:28px!important}.bill-preview-sheet .bill-modern{max-width:900px;margin:auto}.bill-modern{-webkit-print-color-adjust:exact;print-color-adjust:exact}}
 @media print{.bill-modern{-webkit-print-color-adjust:exact;print-color-adjust:exact}.bill-print-page{page-break-after:always}.bill-print-page:last-child{page-break-after:auto}}
+.bill-owner-picker{display:grid;grid-template-columns:minmax(240px,1fr) minmax(300px,2fr);gap:14px;grid-column:1/-1}
+.bill-contract-picker{border:1px solid #dce4eb;border-radius:12px;background:#f8fafc;overflow:hidden}
+.bill-contract-picker-head{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 12px;border-bottom:1px solid #e2e8ee;background:#fff}
+.bill-contract-picker-head b{font-size:12px;color:#173e56}.bill-contract-picker-head button{padding:6px 10px;font-size:11px}
+.bill-contract-options{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;padding:10px;max-height:176px;overflow:auto}
+.bill-contract-option{display:flex;align-items:flex-start;gap:9px;padding:10px;border:1px solid #dce4eb;border-radius:10px;background:#fff;cursor:pointer}
+.bill-contract-option:has(input:checked){border-color:#2d7180;background:#eef7f8}
+.bill-contract-option input{width:17px;height:17px;margin-top:1px;accent-color:#2d7180;flex:0 0 auto}
+.bill-contract-option span{min-width:0;font-size:11px;line-height:1.3;color:#536b7b}.bill-contract-option strong{display:block;color:#173e56;font-size:12px;margin-bottom:2px}
+.bill-contract-empty{grid-column:1/-1;padding:12px;color:#667085;font-size:12px;text-align:center}
+.bill-batch-note{grid-column:1/-1;margin-top:-4px;font-size:11px;color:#667085}
+@media(max-width:900px){.bill-owner-picker{grid-template-columns:1fr}.bill-contract-options{grid-template-columns:1fr}}
 </style>
 
 <style id="locapro-build-002-stabile-layout">
@@ -2990,18 +3042,26 @@ body:has(#dashboard.active) main{
 <section id="bolletta" class="page">
 <div class="card no-print"><h2>Genera bolletta</h2><div class="notice" style="margin-bottom:14px">Gli importi sono letti dalla scheda contratto aggiornata. Quando presenti vengono aggiunti automaticamente il recupero ISTAT e il 50% dell’imposta di registro.</div>
 <div class="grid g3">
-<div class="field span2"><label>Contratto</label><select id="bContratto" onchange="caricaDatiBolletta()"><option value="">Seleziona contratto</option></select></div>
+<div class="bill-owner-picker">
+  <div class="field"><label>Proprietario</label><select id="bProprietario" onchange="renderLocazioniBolletta()"><option value="">Seleziona proprietario</option></select></div>
+  <div class="bill-contract-picker">
+    <div class="bill-contract-picker-head"><b>Inquilini / locazioni da stampare</b><button class="secondary" type="button" onclick="selezionaTutteLocazioniBolletta()">Seleziona tutte</button></div>
+    <div class="bill-contract-options" id="bLocazioniOptions"><div class="bill-contract-empty">Seleziona prima un proprietario.</div></div>
+  </div>
+</div>
+<div class="field span2"><label>Locazione di riferimento per importi e modifiche</label><select id="bContratto" onchange="sincronizzaLocazioneBolletta()"><option value="">Seleziona locazione</option></select></div>
+<div class="bill-batch-note">Gli importi mostrati sotto si riferiscono alla locazione di riferimento. Nella stampa multipla LOCA PRO calcola automaticamente canone, oneri, ISTAT e imposta per ciascuna locazione selezionata.</div>
 <div class="field" style="display:none"><label>Numero bolletta</label><input id="bNumero"></div>
 <div class="field"><label>Data emissione</label><input id="bEmissione" type="date"></div>
 <div class="field"><label>Data scadenza pagamento</label><input id="bScadenza" type="date"></div>
-<div class="field"><label>Periodicità</label><select id="bPeriodo" onchange="popolaRateBolletta();aggiornaModalitaBolletta()"><option value="1">Mensile</option><option value="3">Trimestrale</option><option value="6">Semestrale</option><option value="12">Annuale</option><option value="custom">Personalizzato</option></select></div>
-<div class="field" id="bModalitaWrap"><label>Stampa del trimestre</label><select id="bModalita" onchange="generaBolletta()"><option value="unico">Unico bollettino trimestrale</option><option value="separati">3 bollettini mensili separati</option></select></div>
+<div class="field"><label>Periodicità</label><select id="bPeriodo" onchange="cambiaPeriodicitaBolletta()"><option value="1">Mensile</option><option value="3">Trimestrale</option><option value="6">Semestrale</option><option value="12">Annuale</option><option value="custom">Personalizzato</option></select></div>
+<div class="field" id="bModalitaWrap"><label>Suddivisione del trimestre</label><select id="bModalita" onchange="aggiornaModalitaBolletta();generaBolletta()"><option value="separati" selected>3 bollette mensili separate</option><option value="unico">1 bolletta unica trimestrale</option></select><small id="bModalitaHint" class="muted">Verranno create tre bollette distinte, una per ciascun mese.</small></div>
 <div class="field"><label>Anno competenza</label><select id="bAnno" onchange="applicaRataBolletta()"></select></div>
 <div class="field"><label>Rata / periodo</label><select id="bRata" onchange="applicaRataBolletta()"></select></div>
 <div class="field"><label>Dal</label><input id="bDal" type="date" onchange="ricalcolaImportiBolletta()"></div><div class="field"><label>Al</label><input id="bAl" type="date" onchange="ricalcolaImportiBolletta()"></div>
 <div class="field"><label>Canone del periodo (€)</label><input id="bCanone" type="number" step="0.01"></div><div class="field"><label>Oneri del periodo (€)</label><input id="bOneri" type="number" step="0.01"></div><div class="field"><label>Recupero ISTAT (€)</label><input id="bRecuperoIstat" type="number" step="0.01" value="0"></div><div class="field"><label>Imposta di registro 50% (€)</label><input id="bImpostaRegistro" type="number" step="0.01" value="0"></div><div class="field"><label>Conguaglio / altre somme (€)</label><input id="bExtra" type="number" step="0.01" value="0"></div>
 <div class="field span3"><label>Descrizione conguaglio / note</label><textarea id="bDescrizione" placeholder="Esempio: conguaglio spese condominiali, imposta di registro, arretrati ISTAT..."></textarea></div>
-<div class="field span3"><label>Coordinate e istruzioni di pagamento</label><textarea id="bPagamento" placeholder="Esempio: bonifico bancario sul conto intestato al locatore..."></textarea></div>
+<div class="field span3"><label>Istruzioni di pagamento aggiuntive (facoltative)</label><textarea id="bPagamento" placeholder="Inserisci qui solo eventuali indicazioni aggiuntive. Beneficiario e IBAN vengono recuperati automaticamente."></textarea></div>
 </div><div class="actions"><button class="primary" onclick="generaBolletta()">Crea anteprima</button><button class="secondary" onclick="emettiBolletta()">Emetti e aggiorna scadenze</button><button class="dark" onclick="stampaBolletta()">Salva come PDF / Stampa</button></div></div>
 <div class="card"><div id="anteprimaBolletta" class="empty">Seleziona un contratto e crea la bolletta.</div></div>
 </section>
@@ -3053,7 +3113,13 @@ body:has(#dashboard.active) main{
       <div class="contract-grid">
         <div class="field c-span-8"><label>IBAN dello studio</label><input id="studioIBAN" placeholder="IT..."></div>
         <div class="field c-span-4"><label>Banca</label><input id="studioBanca"></div>
+        <div class="field c-span-12"><label>Firma da riportare nelle bollette</label><input id="studioFirmaTesto" placeholder="Es. Riccardo Maggi"></div>
         <div class="field c-span-12"><label>Dicitura da inserire a piè di pagina</label><textarea id="studioFooter" rows="3" placeholder="Es. Documento predisposto dallo Studio ..."></textarea></div>
+      </div>
+      <div class="studio-logo-box studio-signature-box">
+        <div class="studio-logo-preview studio-signature-preview" id="studioFirmaPreview">Nessuna immagine firma</div>
+        <div class="studio-logo-help"><b>Immagine della firma (facoltativa)</b><p>Carica una firma PNG, JPG o WEBP. Se non carichi un’immagine, nelle bollette verrà usato il testo indicato sopra.</p><div class="studio-logo-actions"><label class="logo-upload">Carica firma<input type="file" accept="image/png,image/jpeg,image/webp" hidden onchange="caricaFirmaStudio(event)"></label><button type="button" class="secondary" onclick="rimuoviFirmaStudio()">Rimuovi firma</button></div></div>
+        <input type="hidden" id="studioFirmaImmagine">
       </div>
     </div>
   </div>
@@ -3183,7 +3249,10 @@ body:has(#dashboard.active) main{
           </div>
           <div class="lp-setting-card">
             <div><b>Programma preferito</b><span id="lpPrintProgramLabel">Usa il programma predefinito di Windows</span></div>
-            <button class="secondary" type="button" onclick="scegliProgrammaStampe()">Scegli programma…</button>
+            <div class="actions">
+              <button class="secondary" type="button" onclick="scegliProgrammaStampe()">Scegli programma…</button>
+              <button class="secondary" type="button" onclick="usaProgrammaPredefinitoStampe()">Usa predefiniti Windows</button>
+            </div>
           </div>
 
           <div class="lp-setting-card">
@@ -3200,7 +3269,7 @@ body:has(#dashboard.active) main{
             <button class="secondary" onclick="esportaUltimaStampaWord()">Apri ultima stampa in Word</button>
             <button class="secondary" onclick="apriUltimoPdf()">Apri ultimo PDF</button>
           </div>
-          <div class="notice" style="margin-top:14px">La versione desktop prepara il documento con logo, intestazione, margini e caratteri salvati, quindi lo apre nel lettore PDF, in Word oppure nel programma scelto. Word consente anche di modificare il contenuto prima del salvataggio definitivo.</div>
+          <div class="notice" style="margin-top:14px">I documenti vengono salvati automaticamente in <b>Documenti\LOCA PRO\Stampe</b> e aperti nel programma predefinito di Windows oppure in quello scelto. Word consente anche di modificare il contenuto prima del salvataggio definitivo.</div>
         </div>
 
         <div class="lp-settings-panel" data-settings-panel="folders">
@@ -3261,14 +3330,17 @@ function val(id){return $(id).value.trim()}function n(id){return Number($(id).va
 const APP_VERSION='1.7.0'; const fields=['codice','stato','tipo','proprietario','cfLocatore','ibanLocatore','bancaLocatore','telefonoLocatore','cellulareLocatore','emailLocatore','pecLocatore','contattiLocatore','conduttore','cfConduttore','telefonoConduttore','cellulareConduttore','emailConduttore','pecConduttore','contattiConduttore','immobile','catasto','renditaCatastale','decorrenza','scadenza','preavviso','canoneAnnuo','oneriAnnui','periodicita','deposito','regime','quotaImposta','scadenzaIstat','quotaIstat','scadenzaImposta','dateVerificate','noteDate','note'];
 
 const STUDIO_KEY='locapro_studio_profile_v1';
-const STUDIO_FIELDS=['studioLogo','studioDenominazione','studioReferente','studioCF','studioPIVA','studioSDI','studioIndirizzo','studioCAP','studioComune','studioProvincia','studioTelefono','studioCellulare','studioEmail','studioPEC','studioSito','studioIBAN','studioBanca','studioFooter'];
-const STUDIO_DEFAULT={studioLogo:'',studioDenominazione:'MAGGI RICCARDO · GESTIONE LOCAZIONI',studioReferente:'RICCARDO MAGGI',studioCF:'',studioPIVA:'',studioSDI:'',studioIndirizzo:'',studioCAP:'',studioComune:'MILANO',studioProvincia:'MI',studioTelefono:'',studioCellulare:'',studioEmail:'',studioPEC:'',studioSito:'',studioIBAN:'',studioBanca:'',studioFooter:'Documento gestionale predisposto da Loca Pro.'};
+const STUDIO_FIELDS=['studioLogo','studioDenominazione','studioReferente','studioCF','studioPIVA','studioSDI','studioIndirizzo','studioCAP','studioComune','studioProvincia','studioTelefono','studioCellulare','studioEmail','studioPEC','studioSito','studioIBAN','studioBanca','studioFirmaTesto','studioFirmaImmagine','studioFooter'];
+const STUDIO_DEFAULT={studioLogo:'',studioDenominazione:'MAGGI RICCARDO · GESTIONE LOCAZIONI',studioReferente:'RICCARDO MAGGI',studioCF:'',studioPIVA:'',studioSDI:'',studioIndirizzo:'',studioCAP:'',studioComune:'MILANO',studioProvincia:'MI',studioTelefono:'',studioCellulare:'',studioEmail:'',studioPEC:'',studioSito:'',studioIBAN:'',studioBanca:'',studioFirmaTesto:'RICCARDO MAGGI',studioFirmaImmagine:'',studioFooter:'Documento gestionale predisposto da Loca Pro.'};
 function getStudio(){try{return {...STUDIO_DEFAULT,...JSON.parse(localStorage.getItem(STUDIO_KEY)||'{}')}}catch(e){return {...STUDIO_DEFAULT}}}
 function setStudio(x){localStorage.setItem(STUDIO_KEY,JSON.stringify(x))}
 function aggiornaLogoStudio(){const box=$('studioLogoPreview'),src=$('studioLogo')?$('studioLogo').value:'';if(!box)return;box.innerHTML=src?`<img src="${src}" alt="Logo studio">`:'Nessun logo caricato'}
 function caricaLogoStudio(event){const file=event.target.files&&event.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){alert('Seleziona un file immagine valido.');return}const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const maxW=900,maxH=450,ratio=Math.min(1,maxW/img.width,maxH/img.height),canvas=document.createElement('canvas');canvas.width=Math.max(1,Math.round(img.width*ratio));canvas.height=Math.max(1,Math.round(img.height*ratio));const ctx=canvas.getContext('2d');ctx.clearRect(0,0,canvas.width,canvas.height);ctx.drawImage(img,0,0,canvas.width,canvas.height);$('studioLogo').value=canvas.toDataURL('image/png');aggiornaLogoStudio();event.target.value=''};img.src=e.target.result};reader.readAsDataURL(file)}
 function rimuoviLogoStudio(){if(!$('studioLogo')||!$('studioLogo').value)return;$('studioLogo').value='';aggiornaLogoStudio()}
-function caricaAnagraficaStudio(){const d=getStudio();STUDIO_FIELDS.forEach(k=>{if($(k))$(k).value=d[k]||''});aggiornaLogoStudio();aggiornaRiepilogoStudio()}
+function aggiornaFirmaStudio(){const box=$('studioFirmaPreview'),src=$('studioFirmaImmagine')?$('studioFirmaImmagine').value:'';if(!box)return;box.innerHTML=src?`<img src="${src}" alt="Firma dello studio">`:'Nessuna immagine firma'}
+function caricaFirmaStudio(event){const file=event.target.files&&event.target.files[0];if(!file)return;if(!file.type.startsWith('image/')){alert('Seleziona un file immagine valido.');return}const reader=new FileReader();reader.onload=e=>{const img=new Image();img.onload=()=>{const canvas=document.createElement('canvas'),maxW=900,maxH=260,padding=14,ratio=Math.min((maxW-padding*2)/img.width,(maxH-padding*2)/img.height),drawW=Math.max(1,Math.round(img.width*ratio)),drawH=Math.max(1,Math.round(img.height*ratio));canvas.width=maxW;canvas.height=maxH;const ctx=canvas.getContext('2d');ctx.clearRect(0,0,maxW,maxH);ctx.drawImage(img,Math.round((maxW-drawW)/2),Math.round((maxH-drawH)/2),drawW,drawH);$('studioFirmaImmagine').value=canvas.toDataURL('image/png');aggiornaFirmaStudio();event.target.value=''};img.src=e.target.result};reader.readAsDataURL(file)}
+function rimuoviFirmaStudio(){if(!$('studioFirmaImmagine')||!$('studioFirmaImmagine').value)return;$('studioFirmaImmagine').value='';aggiornaFirmaStudio()}
+function caricaAnagraficaStudio(){const d=getStudio();STUDIO_FIELDS.forEach(k=>{if($(k))$(k).value=d[k]||''});if($('studioFirmaTesto')&&!$('studioFirmaTesto').value)$('studioFirmaTesto').value=d.studioReferente||'';aggiornaLogoStudio();aggiornaFirmaStudio();aggiornaRiepilogoStudio()}
 function leggiAnagraficaStudio(){const d={};STUDIO_FIELDS.forEach(k=>d[k]=$(k)?$(k).value.trim():'');return d}
 function salvaAnagraficaStudio(){const d=leggiAnagraficaStudio();setStudio(d);aggiornaRiepilogoStudio();alert('Anagrafica studio salvata. I dati saranno utilizzati nelle stampe professionali.')}
 function ripristinaStudioDefault(){if(!confirm('Ripristinare i dati iniziali dell’anagrafica studio?'))return;setStudio(STUDIO_DEFAULT);caricaAnagraficaStudio()}
@@ -3435,7 +3507,94 @@ function dl(name,text,type){let a=document.createElement('a');a.href=URL.createO
 function exportJSON(){dl('backup_gestione_locazioni_v1_0_'+new Date().toISOString().slice(0,10)+'.json',JSON.stringify({app:'Gestione Locazioni',version:APP_VERSION,exported:new Date().toISOString(),contratti:getDB()},null,2),'application/json')}
 function esc(v){return '"'+String(v??'').replaceAll('"','""')+'"'}function exportCSV(){let cols=fields,rows=[cols.join(';'),...getDB().map(c=>cols.map(k=>esc(c[k])).join(';'))];dl('contratti_locazioni.csv','\ufeff'+rows.join('\n'),'text/csv;charset=utf-8')}
 function importJSON(e){let f=e.target.files[0];if(!f)return;let r=new FileReader();r.onload=()=>{try{let x=JSON.parse(r.result),arr=Array.isArray(x)?x:x.contratti;if(!Array.isArray(arr))throw 0;if(confirm(`Importare ${arr.length} contratti sostituendo l'archivio attuale?`)){setDB(arr);renderAll();alert('Backup importato.')}}catch{alert('File JSON non valido.')}};r.readAsText(f)}
-function renderBollettaSelect(){let s=$('bContratto'),old=s.value;s.innerHTML='<option value="">Seleziona contratto</option>'+getDB().map(c=>`<option value="${c.id}">${c.codice||''} ${c.immobile} — ${c.conduttore}</option>`).join('');if(getDB().some(c=>c.id===old))s.value=old;if(!$('bEmissione').value){let t=new Date().toISOString().slice(0,10);$('bEmissione').value=t;$('bScadenza').value=addMonths(t,0);$('bNumero').value=new Date().getFullYear()+'-'+String(Date.now()).slice(-5)}}
+function contrattiDelProprietarioBolletta(nome){
+  const key=normEntity(nome).toLowerCase();
+  return getDB().filter(c=>normEntity(c.proprietario).toLowerCase()===key).sort((a,b)=>{
+    const activeA=a.stato==='Attivo'?0:1,activeB=b.stato==='Attivo'?0:1;
+    return activeA-activeB||String(a.immobile||'').localeCompare(String(b.immobile||''),'it');
+  });
+}
+function contrattiBollettaSelezionati(){
+  const ownerKey=normEntity(val('bProprietario')).toLowerCase();
+  const ids=new Set([...document.querySelectorAll('#bLocazioniOptions .b-locazione-check:checked')].map(el=>String(el.value)));
+  const db=getDB();
+  // La stampa deve rispettare esclusivamente le caselle spuntate.
+  // La locazione di riferimento serve solo a mostrare/modificare gli importi:
+  // non viene mai aggiunta automaticamente alla stampa.
+  return db.filter(c=>ids.has(String(c.id))&&normEntity(c.proprietario).toLowerCase()===ownerKey);
+}
+function aggiornaPulsanteTutteLocazioni(){
+  const button=document.querySelector('.bill-contract-picker-head button');
+  const checks=[...document.querySelectorAll('.b-locazione-check')];
+  if(button)button.textContent=checks.length&&checks.every(el=>el.checked)?'Deseleziona tutte':'Seleziona tutte';
+}
+function aggiornaSelezioneLocazioniBolletta(){
+  const selected=contrattiBollettaSelezionati();
+  if(selected.length&&!selected.some(c=>String(c.id)===String(val('bContratto')))){
+    $('bContratto').value=String(selected[0].id);
+    caricaDatiBolletta();
+  }
+  aggiornaPulsanteTutteLocazioni();
+}
+function selezionaTutteLocazioniBolletta(){
+  const checks=[...document.querySelectorAll('.b-locazione-check')];
+  if(!checks.length)return;
+  const selectAll=!checks.every(el=>el.checked);
+  checks.forEach(el=>{el.checked=selectAll});
+  if(selectAll&&(!$('bContratto').value||!checks.some(el=>el.checked&&el.value===$('bContratto').value))){
+    $('bContratto').value=checks[0].value;
+    caricaDatiBolletta();
+  }
+  aggiornaPulsanteTutteLocazioni();
+}
+function renderLocazioniBolletta(preserve=false){
+  const owner=val('bProprietario'),contracts=contrattiDelProprietarioBolletta(owner);
+  const options=$('bLocazioniOptions'),select=$('bContratto');
+  const oldContract=String(select.value||'');
+  const oldChecked=preserve?new Set([...document.querySelectorAll('.b-locazione-check:checked')].map(el=>String(el.value))):new Set();
+  select.innerHTML='<option value="">Seleziona locazione</option>'+contracts.map(c=>`<option value="${htmlSafe(c.id)}">${pdText(c.codice||'')} ${pdText(c.immobile||'Unità')} — ${pdText(c.conduttore||'')}</option>`).join('');
+  if(!contracts.length){
+    options.innerHTML='<div class="bill-contract-empty">Nessuna locazione collegata al proprietario selezionato.</div>';
+    aggiornaPulsanteTutteLocazioni();
+    return;
+  }
+  options.innerHTML=contracts.map(c=>{
+    const id=String(c.id),checked=preserve&&oldChecked.has(id);
+    return `<label class="bill-contract-option"><input class="b-locazione-check" type="checkbox" value="${htmlSafe(id)}"${checked?' checked':''} onchange="aggiornaSelezioneLocazioniBolletta()"><span><strong>${pdText(c.immobile||'Unità immobiliare')}</strong>${pdText(c.conduttore||'Sfitto / non indicato')} · ${pdText(c.stato||'—')}</span></label>`;
+  }).join('');
+  const chosen=contracts.find(c=>String(c.id)===oldContract)||contracts.find(c=>c.stato==='Attivo')||contracts[0];
+  select.value=String(chosen.id);
+  caricaDatiBolletta();
+  aggiornaPulsanteTutteLocazioni();
+}
+function sincronizzaLocazioneBolletta(){
+  const id=String(val('bContratto')||'');
+  if(!id)return;
+  caricaDatiBolletta();
+  aggiornaPulsanteTutteLocazioni();
+}
+function renderBollettaSelect(){
+  const ownerSelect=$('bProprietario'),contractSelect=$('bContratto');
+  const oldOwner=ownerSelect.value;
+  const oldContract=String(contractSelect.value||'');
+  const oldRecord=getDB().find(c=>String(c.id)===oldContract);
+  const owners=[...new Map(getDB().filter(c=>normEntity(c.proprietario)).map(c=>[normEntity(c.proprietario).toLowerCase(),normEntity(c.proprietario)])).values()].sort((a,b)=>a.localeCompare(b,'it'));
+  ownerSelect.innerHTML='<option value="">Seleziona proprietario</option>'+owners.map(owner=>`<option value="${htmlSafe(owner)}">${pdText(owner)}</option>`).join('');
+  const requested=oldRecord?.proprietario||oldOwner;
+  const matched=owners.find(owner=>normEntity(owner).toLowerCase()===normEntity(requested).toLowerCase());
+  if(matched)ownerSelect.value=matched;
+  renderLocazioniBolletta(true);
+  if(oldRecord&&contrattiDelProprietarioBolletta(ownerSelect.value).some(c=>String(c.id)===oldContract)){
+    contractSelect.value=oldContract;
+    caricaDatiBolletta();
+  }
+  if(!$('bEmissione').value){
+    const today=new Date().toISOString().slice(0,10);
+    $('bEmissione').value=today;
+    $('bScadenza').value=addMonths(today,0);
+    $('bNumero').value=new Date().getFullYear()+'-'+String(Date.now()).slice(-5);
+  }
+}
 function giorniNelMese(y,m){return new Date(y,m+1,0).getDate()}
 function giorniNelMese(anno,mese){return new Date(Number(anno),Number(mese),0).getDate()}
 function isoData(anno,mese,giorno){return `${anno}-${String(mese).padStart(2,'0')}-${String(giorno).padStart(2,'0')}`}
@@ -3486,60 +3645,89 @@ function caricaDatiBolletta(){
   if(!c)return;
   const map={Mensile:'1',Trimestrale:'3',Semestrale:'6',Annuale:'12'};
   $('bPeriodo').value=map[c.periodicita]||'1';
+  // Per i contratti trimestrali propone subito tre bollette mensili.
+  // L'utente può comunque scegliere esplicitamente il bollettino unico.
+  $('bModalita').value=$('bPeriodo').value==='3'?'separati':'unico';
+  aggiornaModalitaBolletta();
   popolaAnniBolletta();
   // Propone l'anno e la rata successivi rispetto alla data odierna.
   const oggi=new Date();
   $('bAnno').value=String(oggi.getFullYear());
   popolaRateBolletta();
-  if($('bPagamento'))$('bPagamento').value=c.notePagamento||'';
+  if($('bPagamento'))$('bPagamento').value=testoPagamentoBolletta(c);
   if($('bDescrizione')&&!$('bDescrizione').value)$('bDescrizione').value='Canone e oneri relativi al periodo indicato';
 }
 function dataNelPeriodo(data,dal,al){return data&&dal&&al&&data>=dal&&data<=al}
-function ricalcolaImportiBolletta(){
-  let c=getDB().find(x=>String(x.id)===String(val('bContratto')));
-  if(!c)return;
-  let mesi=mesiPeriodoBolletta(),dal=val('bDal'),al=val('bAl');
-  $('bCanone').value=(Number(c.canoneAnnuo||0)*mesi/12).toFixed(2);
-  $('bOneri').value=(Number(c.oneriAnnui||0)*mesi/12).toFixed(2);
-
+function importiAutomaticiBolletta(c){
+  const mesi=mesiPeriodoBolletta(),dal=val('bDal'),al=val('bAl');
   let rec=0;
   if(Number(c.recuperoIstatDaAddebitare||0)>0)rec=Number(c.recuperoIstatDaAddebitare);
   else if(dataNelPeriodo(c.scadenzaIstat,dal,al))rec=Number(c.recuperoIstatDaAddebitare||0);
-  $('bRecuperoIstat').value=rec.toFixed(2);
-
   let imp=0;
   if(c.regime!=='Cedolare secca'){
     if(Number(c.impostaRegistro50DaAddebitare||0)>0)imp=Number(c.impostaRegistro50DaAddebitare);
     else if(dataNelPeriodo(c.scadenzaImposta,dal,al))imp=Math.round(Number(c.canoneAnnuo||0)*.02)/2;
   }
-  $('bImpostaRegistro').value=imp.toFixed(2);
+  return {
+    canone:Number(c.canoneAnnuo||0)*mesi/12,
+    oneri:Number(c.oneriAnnui||0)*mesi/12,
+    rec,
+    imp,
+    extra:0
+  };
 }
-function caricaBolletta(){let c=getDB().find(x=>String(x.id)===String(val('bContratto')));if(!c)return;let map={Mensile:'1',Trimestrale:'3',Semestrale:'6',Annuale:'12'};$('bPeriodo').value=map[c.periodicita]||'1';let oggi=new Date().toISOString().slice(0,10);$('bDal').value=oggi;aggiornaPeriodoBolletta();$('bPagamento').value=c.notePagamento||'';generaBolletta()}
+function importiBollettaContratto(c){
+  const automatici=importiAutomaticiBolletta(c);
+  const riferimento=String(c.id)===String(val('bContratto'));
+  if(!riferimento)return automatici;
+  return {
+    canone:Number(val('bCanone')||automatici.canone||0),
+    oneri:Number(val('bOneri')||automatici.oneri||0),
+    rec:Number(val('bRecuperoIstat')||0),
+    imp:Number(val('bImpostaRegistro')||0),
+    extra:Number(val('bExtra')||0)
+  };
+}
+function ricalcolaImportiBolletta(){
+  let c=getDB().find(x=>String(x.id)===String(val('bContratto')));
+  if(!c)return;
+  const importi=importiAutomaticiBolletta(c);
+  $('bCanone').value=importi.canone.toFixed(2);
+  $('bOneri').value=importi.oneri.toFixed(2);
+  $('bRecuperoIstat').value=importi.rec.toFixed(2);
+  $('bImpostaRegistro').value=importi.imp.toFixed(2);
+}
+function caricaBolletta(){let c=getDB().find(x=>String(x.id)===String(val('bContratto')));if(!c)return;let map={Mensile:'1',Trimestrale:'3',Semestrale:'6',Annuale:'12'};$('bPeriodo').value=map[c.periodicita]||'1';let oggi=new Date().toISOString().slice(0,10);$('bDal').value=oggi;aggiornaPeriodoBolletta();$('bPagamento').value=testoPagamentoBolletta(c);generaBolletta()}
 function htmlSafe(x){return String(x??'').replace(/[&<>\"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','\"':'&quot;',"'":'&#39;'}[m]))}
 function generaBolletta(){
-  const c=getDB().find(x=>String(x.id)===String(val('bContratto')));if(!c)return alert('Seleziona un contratto.');
+  const contracts=contrattiBollettaSelezionati();if(!contracts.length)return alert('Seleziona almeno una locazione.');
   aggiornaModalitaBolletta();
   $('anteprimaBolletta').className='bill-preview-stack';
-  $('anteprimaBolletta').innerHTML=datiBollettini().map(b=>bollettaPagina(c,b,true)).join('');
+  $('anteprimaBolletta').innerHTML=contracts.flatMap(c=>datiBollettini(c).map(b=>bollettaPagina(c,b,true))).join('');
 }
 function emettiBolletta(){
-  const id=val('bContratto'),db=getDB(),c=db.find(x=>String(x.id)===String(id));
-  if(!c)return alert('Seleziona un contratto.');
+  const selected=contrattiBollettaSelezionati();
+  if(!selected.length)return alert('Seleziona almeno una locazione.');
+  const db=getDB(),selectedIds=new Set(selected.map(c=>String(c.id)));
   generaBolletta();
-  const rec=Number(val('bRecuperoIstat')||0),imp=Number(val('bImpostaRegistro')||0);
-  if(rec>0)c.recuperoIstatDaAddebitare='0.00';
-  if(imp>0){
-    c.impostaRegistro50DaAddebitare='0.00';
-    c.scadenzaImposta=addYears(c.scadenzaImposta||val('bDal'),1);
-  }
-  if(c.scadenzaIstat&&dataNelPeriodo(c.scadenzaIstat,val('bDal'),val('bAl')))c.scadenzaIstat=addYears(c.scadenzaIstat,1);
-  c.ultimaBolletta={
-    numero:val('bNumero'),emissione:val('bEmissione'),scadenza:val('bScadenza'),
-    dal:val('bDal'),al:val('bAl'),totale:(Number(val('bCanone')||0)+Number(val('bOneri')||0)+rec+imp+Number(val('bExtra')||0)).toFixed(2),modalita:(val('bPeriodo')==='3'?val('bModalita'):'unico')
-  };
-  c.updated=new Date().toISOString();
+  db.filter(c=>selectedIds.has(String(c.id))).forEach(c=>{
+    const amounts=importiBollettaContratto(c);
+    if(amounts.rec>0)c.recuperoIstatDaAddebitare='0.00';
+    if(amounts.imp>0){
+      c.impostaRegistro50DaAddebitare='0.00';
+      c.scadenzaImposta=addYears(c.scadenzaImposta||val('bDal'),1);
+    }
+    if(c.scadenzaIstat&&dataNelPeriodo(c.scadenzaIstat,val('bDal'),val('bAl')))c.scadenzaIstat=addYears(c.scadenzaIstat,1);
+    c.ultimaBolletta={
+      numero:val('bNumero'),emissione:val('bEmissione'),scadenza:val('bScadenza'),
+      dal:val('bDal'),al:val('bAl'),totale:(amounts.canone+amounts.oneri+amounts.rec+amounts.imp+amounts.extra).toFixed(2),
+      modalita:(val('bPeriodo')==='3'?val('bModalita'):'unico'),
+      bollettini:val('bPeriodo')==='3'&&val('bModalita')==='separati'?3:1
+    };
+    c.updated=new Date().toISOString();
+  });
   setDB(db);renderAll();
-  alert('Bolletta registrata. Le prossime scadenze ISTAT e imposta sono state aggiornate quando addebitate.');
+  alert(`${selected.length===1?'Bolletta registrata':selected.length+' locazioni registrate'}. Le prossime scadenze ISTAT e imposta sono state aggiornate quando addebitate.`);
 }
 
 function stampaBolletta(){if($('anteprimaBolletta').classList.contains('empty'))generaBolletta();setTimeout(()=>window.print(),100)}
@@ -3594,23 +3782,25 @@ function pdHeader(title,subtitle,meta=''){
 function pdFooter(){const d=getStudio(),ps=getPrintSettings();return `<div class="pd-footer"><span>${htmlSafe(ps.footer||d.studioFooter||'LOCA PRO · Documento gestionale')}</span><span class="pd-page">${ps.pageNumbers===false?'':'Pagina'}</span></div>`}
 function pdRow(label,value,full=false){return `<div class="pd-row${full?' full':''}"><div class="pd-label">${htmlSafe(label)}</div><div class="pd-value">${pdText(value)}</div></div>`}
 let titoloDocumentoPrimaDellaStampa='';
-async function avviaStampaProfessionale(html){
+async function avviaStampaProfessionale(html,wordData=null){
   const ps=getPrintSettings();
   window.lpUltimaStampaHtml=html+pdFooter();
+  window.lpUltimaStampaWordData=wordData;
   localStorage.setItem('locapro_last_print_html',window.lpUltimaStampaHtml);
   let mode=ps.openMode||'preview';
   if(mode==='ask')mode=await scegliFormatoApertura();
-  if(mode==='pdf'||mode==='word')return apriDocumentoPreparato(mode,window.lpUltimaStampaHtml,'stampa_loca_pro');
+  if(mode==='pdf'||mode==='word')return apriDocumentoPreparato(mode,window.lpUltimaStampaHtml,'stampa_loca_pro',wordData);
   $('printPaper').style.fontFamily=ps.font||'Arial';
   $('printPaper').style.fontSize=(ps.size||10)+'pt';
   $('printPaper').style.setProperty('--lp-print-margin',(ps.margins||14)+'mm');
   $('printPaper').innerHTML=window.lpUltimaStampaHtml;
   $('printPaper').querySelectorAll('a').forEach(a=>{const span=document.createElement('span');span.textContent=a.textContent||'';span.className=a.className||'';a.replaceWith(span)});
   $('printDocument').classList.add('previewing');
-  titoloDocumentoPrimaDellaStampa=document.title;document.title=' ';setTimeout(()=>window.print(),180);
+  titoloDocumentoPrimaDellaStampa=document.title;
 }
 function chiudiAnteprimaStampa(){if(titoloDocumentoPrimaDellaStampa)document.title=titoloDocumentoPrimaDellaStampa;$('printDocument').classList.remove('previewing');$('printPaper').innerHTML=''}
-window.addEventListener('afterprint',()=>chiudiAnteprimaStampa());
+async function apriAnteprimaPdf(){return apriDocumentoPreparato('pdf',window.lpUltimaStampaHtml,'stampa_loca_pro')}
+async function apriAnteprimaWord(){return apriDocumentoPreparato('word',window.lpUltimaStampaHtml,'stampa_loca_pro',window.lpUltimaStampaWordData)}
 
 function datiSchedaCorrente(){const c={};fields.forEach(k=>{const el=$(k);c[k]=el?el.value:''});return c}
 function stampaSchedaProfessionale(){
@@ -3656,22 +3846,87 @@ function aggiornaModalitaBolletta(){
   const trimestrale=val('bPeriodo')==='3';
   wrap.style.display=trimestrale?'block':'none';
   if(!trimestrale)$('bModalita').value='unico';
+  const hint=$('bModalitaHint');
+  if(hint&&trimestrale){
+    hint.textContent=val('bModalita')==='separati'
+      ?'Verranno create tre bollette distinte, una per ciascun mese.'
+      :'Verrà creata una sola bolletta per tutti i tre mesi.';
+  }
+}
+function cambiaPeriodicitaBolletta(){
+  popolaRateBolletta();
+  // Entrando nella periodicità trimestrale, la scelta predefinita richiesta
+  // è ottobre, novembre e dicembre su tre bollette separate (o gli altri
+  // tre mesi del trimestre selezionato).
+  $('bModalita').value=val('bPeriodo')==='3'?'separati':'unico';
+  aggiornaModalitaBolletta();
 }
 function isoAddMonths(dateStr,months){const d=new Date(dateStr+'T12:00:00');d.setMonth(d.getMonth()+months);return d.toISOString().slice(0,10)}
 function isoEndMonth(dateStr){const d=new Date(dateStr+'T12:00:00');return new Date(d.getFullYear(),d.getMonth()+1,0,12).toISOString().slice(0,10)}
 function ripartisciImporto(totale,parti){const cents=Math.round(Number(totale||0)*100),base=Math.floor(cents/parti),resto=cents-base*parti;return Array.from({length:parti},(_,i)=>(base+(i<resto?1:0))/100)}
-function datiBollettini(){
+function datiBollettini(c){
   const separated=val('bPeriodo')==='3'&&val('bModalita')==='separati';
-  const n=separated?3:1,canoni=ripartisciImporto(val('bCanone'),n),oneri=ripartisciImporto(val('bOneri'),n);
+  const amounts=importiBollettaContratto(c);
+  const n=separated?3:1,canoni=ripartisciImporto(amounts.canone,n),oneri=ripartisciImporto(amounts.oneri,n);
   const base=val('bDal'),num=val('bNumero')||'—';
   return Array.from({length:n},(_,i)=>{
     const dal=separated?isoAddMonths(base,i):val('bDal');
     const al=separated?isoEndMonth(dal):val('bAl');
-    return {indice:i,n,numero:separated?`${num}/${i+1}`:num,dal,al,canone:canoni[i],oneri:oneri[i],rec:i===0?Number(val('bRecuperoIstat')||0):0,imp:i===0?Number(val('bImpostaRegistro')||0):0,extra:i===0?Number(val('bExtra')||0):0,scadenza:separated?isoAddMonths(val('bScadenza'),i):val('bScadenza')};
+    return {
+      indice:i,n,numero:separated?`${num}/${i+1}`:num,dal,al,
+      canone:canoni[i],oneri:oneri[i],
+      rec:i===0?amounts.rec:0,imp:i===0?amounts.imp:0,extra:i===0?amounts.extra:0,
+      scadenza:separated?isoAddMonths(val('bScadenza'),i):val('bScadenza'),
+      descrizione:val('bDescrizione'),
+      pagamento:String(c.id)===String(val('bContratto'))?(val('bPagamento')||c.notePagamento||''):(c.notePagamento||'')
+    };
   });
 }
+function ibanNormalizzato(value){
+  const compact=String(value||'').toUpperCase().replace(/[^A-Z0-9]/g,'');
+  return /^[A-Z]{2}\d{2}[A-Z0-9]{11,30}$/.test(compact)?compact:'';
+}
+function ibanDaTesto(value){
+  const text=String(value||'').toUpperCase();
+  const italian=text.match(/\bIT\s*\d{2}(?:[\s-]*[A-Z0-9]){23}\b/);
+  if(italian)return ibanNormalizzato(italian[0]);
+  const labelled=text.match(/IBAN(?:\s+DEL\s+BENEFICIARIO)?\s*[:\-]?\s*([A-Z]{2}\s*\d{2}(?:[\s-]*[A-Z0-9]){11,30})/);
+  return labelled?ibanNormalizzato(labelled[1]):'';
+}
+function formattaIban(value){
+  const iban=ibanNormalizzato(value);
+  return iban?iban.match(/.{1,4}/g).join(' '):'';
+}
+function coordinateProprietarioBolletta(c,pagamentoLibero=''){
+  const records=contrattiDelProprietarioBolletta(c.proprietario);
+  const ibanCandidates=[
+    c.ibanLocatore,c.ibanProprietario,c.iban,c.IBAN,
+    ...records.flatMap(record=>[record.ibanLocatore,record.ibanProprietario,record.iban,record.IBAN]),
+    ibanDaTesto(pagamentoLibero),
+    ...records.map(record=>ibanDaTesto(record.notePagamento||record.coordinatePagamento||''))
+  ];
+  const iban=ibanCandidates.map(ibanNormalizzato).find(Boolean)||'';
+  const bancaRecord=records.find(record=>String(record.bancaLocatore||'').trim());
+  return {
+    iban:formattaIban(iban),
+    banca:String(c.bancaLocatore||bancaRecord?.bancaLocatore||'').trim()
+  };
+}
+function testoPagamentoBolletta(c){
+  const salvato=String(c.notePagamento||c.coordinatePagamento||'').trim();
+  return salvato;
+}
+function istruzioniPagamentoBolletta(pagamento,iban='',banca=''){
+  return String(pagamento||'').split(/\r?\n/).map(line=>line.trim()).filter(line=>{
+    if(!line)return false;
+    if(/^bonifico\s+bancario\s+intestato\s+a\b/i.test(line))return false;
+    if(iban&&/^iban(?:\s+del\s+beneficiario)?\s*[:\-]/i.test(line))return false;
+    if(banca&&/^banca\s*[:\-]/i.test(line))return false;
+    return true;
+  }).join('\n');
+}
 function bollettaPagina(c,b,preview=false){
-  const d=getStudio(),desc=val('bDescrizione'),pag=val('bPagamento'),tot=b.canone+b.oneri+b.rec+b.imp+b.extra;
+  const d=getStudio(),desc=b.descrizione||'',pag=b.pagamento||'',tot=b.canone+b.oneri+b.rec+b.imp+b.extra;
   const logo=d.studioLogo?`<img class="bill-logo" src="${d.studioLogo}" alt="Logo studio">`:`<div class="bill-fallback-brand">LOCA <span>PRO</span></div>`;
   const studioNome=d.studioDenominazione||'MAGGI RICCARDO';
   const studioFiscale=[d.studioCF&&`C.F. ${d.studioCF}`,d.studioPIVA&&`P.IVA ${d.studioPIVA}`].filter(Boolean).join(' · ');
@@ -3682,12 +3937,20 @@ function bollettaPagina(c,b,preview=false){
   if(b.rec)rows.push([`Recupero adeguamento ISTAT`,b.rec]);
   if(b.imp)rows.push([`Quota conduttore imposta di registro 50%`,b.imp]);
   if(b.extra)rows.push([desc||'Conguaglio / altre somme',b.extra]);
-  const righe=rows.map(([x,v])=>`<tr><td>${pdText(x)}</td><td class="num">${pdMoney(v)}</td></tr>`).join('');
-  const iban=c.ibanLocatore||d.studioIBAN||'';
-  const banca=c.bancaLocatore||d.studioBanca||'';
+  const righe=rows.map(([x,v])=>`<tr><td>${pdText(x)}</td><td class="num" style="text-align:right;white-space:nowrap">${pdMoney(v)}</td></tr>`).join('');
+  const coordinate=coordinateProprietarioBolletta(c,b.pagamento);
+  const iban=coordinate.iban;
+  const banca=coordinate.banca;
   const causale=`Canone di locazione – ${periodoTitolo} – ${c.immobile||''}`;
-  const paymentText=pag||([iban&&`IBAN: ${iban}`,banca&&`Banca: ${banca}`].filter(Boolean).join('\n'));
-  const page=`<div class="bill-print-page bill-modern">
+  const paymentText=istruzioniPagamentoBolletta(pag,iban,banca);
+  const pesoPagina=rows.length+(banca?0.5:0)+(paymentText?1:0)+(desc&&!b.extra?1:0);
+  const densitaPagina=pesoPagina>13?'bill-density-ultra':pesoPagina>8?'bill-density-dense':pesoPagina>5?'bill-density-compact':'';
+  const firmaTesto=d.studioFirmaTesto||d.studioReferente||'Firma';
+  const firmaContenuto=d.studioFirmaImmagine
+    ?`<img src="${d.studioFirmaImmagine}" alt="Firma ${pdText(firmaTesto)}">`
+    :`<span class="bill-signature-text">${pdText(firmaTesto)}</span>`;
+  const firmaEtichetta=d.studioFirmaImmagine?pdText(firmaTesto):'Firma';
+  const page=`<div class="bill-print-page bill-modern ${densitaPagina}">
     <div class="bill-head">
       <div class="bill-head-brand">${logo}</div>
       <div class="bill-head-office">
@@ -3706,20 +3969,55 @@ function bollettaPagina(c,b,preview=false){
       <div><small>IMMOBILE</small><b>${pdText(c.immobile||'—')}</b><span>${pdText(c.tipologia||'Unità immobiliare locata')}</span></div>
       <div><small>PERIODO DI COMPETENZA</small><b>${pdText(periodoTitolo)}</b><span>${fmtDate(b.dal)} – ${fmtDate(b.al)}</span></div>
     </div>
-    <div class="bill-table-wrap"><div class="bill-section-title">DETTAGLIO IMPORTI</div><table class="bp-table"><thead><tr><th>DESCRIZIONE</th><th>IMPORTO</th></tr></thead><tbody>${righe}<tr class="bill-total-row"><td>TOTALE DA PAGARE</td><td class="num">${pdMoney(tot)}</td></tr></tbody></table></div>
-    <div class="bill-payment-box"><div class="bill-bank-icon">▣</div><div class="bill-payment-content"><strong>MODALITÀ DI PAGAMENTO</strong><span>Il pagamento dovrà essere effettuato direttamente in favore della proprietà.</span><div class="bill-payment-grid"><b>Intestatario:</b><span>${pdText(c.proprietario||'—')}</span><b>Scadenza:</b><span>${fmtDate(b.scadenza)}</span>${iban?`<b>IBAN:</b><span>${pdText(iban)}</span>`:''}${banca?`<b>Banca:</b><span>${pdText(banca)}</span>`:''}<b>Causale:</b><span class="wide">${pdText(causale)}</span></div>${paymentText&&!iban&&!banca?`<div class="bill-free-payment">${pdText(paymentText)}</div>`:''}</div></div>
+    <div class="bill-table-wrap"><div class="bill-section-title">DETTAGLIO IMPORTI</div><table class="bp-table" width="100%" style="width:100%;table-layout:fixed;border-collapse:collapse"><colgroup><col style="width:74%"><col style="width:26%"></colgroup><thead><tr><th style="width:74%">DESCRIZIONE</th><th style="width:26%;text-align:right">IMPORTO</th></tr></thead><tbody>${righe}<tr class="bill-total-row"><td>TOTALE DA PAGARE</td><td class="num" style="text-align:right;white-space:nowrap">${pdMoney(tot)}</td></tr></tbody></table></div>
+    <div class="bill-payment-box"><div class="bill-payment-content"><strong>MODALITÀ DI PAGAMENTO</strong><div class="bill-payment-grid"><div class="bill-payment-item"><small>BENEFICIARIO</small><b>${pdText(c.proprietario||'—')}</b></div><div class="bill-payment-item"><small>SCADENZA</small><b>${fmtDate(b.scadenza)}</b></div><div class="bill-payment-item wide"><small>IBAN DEL BENEFICIARIO</small><span>${pdText(iban||'Non presente nella scheda del proprietario')}</span></div>${banca?`<div class="bill-payment-item wide"><small>BANCA</small><span>${pdText(banca)}</span></div>`:''}<div class="bill-payment-item wide"><small>CAUSALE</small><span>${pdText(causale)}</span></div>${paymentText?`<div class="bill-payment-item wide"><small>ISTRUZIONI AGGIUNTIVE</small><span>${pdText(paymentText)}</span></div>`:''}</div></div></div>
     ${desc&&!b.extra?`<div class="bill-note-box"><strong>NOTE</strong><span>${pdText(desc)}</span></div>`:''}
-    <div class="bill-sign-row"><span>${pdText(d.studioComune||'Milano')}, ${fmtDate(val('bEmissione'))}</span><span><b>${pdText(d.studioReferente||'Riccardo Maggi')}</b><br>Amministrazione e gestione locazioni</span></div>
-    <div class="bill-bottom"><span>${d.studioTelefono?`☎ ${pdText(d.studioTelefono)}`:''}</span><span>${d.studioEmail?`✉ ${pdText(d.studioEmail)}`:''}</span><span>${d.studioPEC?`PEC ${pdText(d.studioPEC)}`:''}</span></div><div style="text-align:center;margin-top:2mm;font-size:7.2pt;font-weight:800;color:#536b7b;letter-spacing:.3px">GESTIONE IMMOBILIARE E LOCAZIONI</div><div class="bill-software-mark">DOCUMENTO GENERATO CON LOCA PRO</div>
+    <div class="bill-sign-row"><div class="bill-date-block"><b>Data</b><span>${fmtDate(val('bEmissione'))}</span></div><div class="bill-signature-block"><div class="bill-signature-space">${firmaContenuto}</div><div class="bill-signature-label">${firmaEtichetta}</div></div></div>
   </div>`;
   return preview?`<div class="bill-preview-sheet">${page}</div>`:page;
 }
 
 function generaBollettaProfessionale(){
-  const c=getDB().find(x=>String(x.id)===String(val('bContratto')));if(!c)return alert('Seleziona un contratto.');
-  return datiBollettini().map(b=>bollettaPagina(c,b,false)).join('');
+  const contracts=contrattiBollettaSelezionati();if(!contracts.length)return alert('Seleziona almeno una locazione.');
+  const entries=contracts.flatMap(c=>datiBollettini(c).map(b=>({c,b})));
+  const d=getStudio();
+  window.lpBollettaWordData={
+    type:'bollette',
+    studio:{
+      logo:d.studioLogo||'',
+      nome:d.studioDenominazione||'MAGGI RICCARDO',
+      fiscale:[d.studioCF&&`C.F. ${d.studioCF}`,d.studioPIVA&&`P.IVA ${d.studioPIVA}`].filter(Boolean).join(' · '),
+      sede:[d.studioIndirizzo,[d.studioCAP,d.studioComune,d.studioProvincia].filter(Boolean).join(' ')].filter(Boolean).join(' · '),
+      contatti:[d.studioTelefono&&`Tel. ${d.studioTelefono}`,d.studioCellulare&&`Cell. ${d.studioCellulare}`,d.studioEmail,d.studioPEC&&`PEC ${d.studioPEC}`].filter(Boolean),
+      referente:d.studioReferente||'Riccardo Maggi',
+      comune:d.studioComune||'Milano',
+      telefono:d.studioTelefono||d.studioCellulare||'',
+      email:d.studioEmail||'',
+      pec:d.studioPEC||'',
+      firmaTesto:d.studioFirmaTesto||d.studioReferente||'Firma',
+      firmaImmagine:d.studioFirmaImmagine||''
+    },
+    bills:entries.map(({c,b})=>{
+      const coordinate=coordinateProprietarioBolletta(c,b.pagamento);
+      const periodoTitolo=val('bPeriodo')==='3'&&val('bModalita')!=='separati'?`${Math.floor((new Date(b.dal+'T12:00:00').getMonth())/3)+1}° TRIMESTRE ${new Date(b.dal+'T12:00:00').getFullYear()}`:`${fmtDate(b.dal)} – ${fmtDate(b.al)}`;
+      const righe=[{descrizione:'Canone di locazione',importo:b.canone},{descrizione:'Oneri e accessori',importo:b.oneri}];
+      if(b.rec)righe.push({descrizione:'Recupero adeguamento ISTAT',importo:b.rec});
+      if(b.imp)righe.push({descrizione:'Quota conduttore imposta di registro 50%',importo:b.imp});
+      if(b.extra)righe.push({descrizione:b.descrizione||'Conguaglio / altre somme',importo:b.extra});
+      return {
+        conduttore:c.conduttore||'—',immobile:c.immobile||'',proprietario:c.proprietario||'—',
+        cfLocatore:c.cfLocatore||'',tipologia:c.tipologia||'Unità immobiliare locata',
+        periodoTitolo,dal:fmtDate(b.dal),al:fmtDate(b.al),scadenza:fmtDate(b.scadenza),emissione:fmtDate(val('bEmissione')),
+        righe,totale:b.canone+b.oneri+b.rec+b.imp+b.extra,
+        iban:coordinate.iban,banca:coordinate.banca,
+        causale:`Canone di locazione – ${periodoTitolo} – ${c.immobile||''}`,
+        pagamento:istruzioniPagamentoBolletta(b.pagamento,coordinate.iban,coordinate.banca),nota:b.descrizione&&!b.extra?b.descrizione:''
+      };
+    })
+  };
+  return entries.map(({c,b})=>bollettaPagina(c,b,false)).join('');
 }
-function stampaBolletta(){const html=generaBollettaProfessionale();if(html)avviaStampaProfessionale(html)}
+function stampaBolletta(){const html=generaBollettaProfessionale();if(html)avviaStampaProfessionale(html,window.lpBollettaWordData)}
 
 
 
@@ -3730,8 +4028,87 @@ function aggiornaEtichettaProgramma(){const x=getPrintSettings(),el=$('lpPrintPr
 function caricaImpostazioniStampa(){const x=getPrintSettings();if($('lpPrintFont'))$('lpPrintFont').value=x.font;if($('lpPrintSize'))$('lpPrintSize').value=String(x.size);if($('lpPrintMargins'))$('lpPrintMargins').value=String(x.margins);if($('lpPrintAccent'))$('lpPrintAccent').value=x.accent||'palette';if($('lpPrintHeader'))$('lpPrintHeader').checked=x.header!==false;if($('lpPrintFooter'))$('lpPrintFooter').value=x.footer||'';if($('lpPrintPageNumbers'))$('lpPrintPageNumbers').checked=x.pageNumbers!==false;if($('lpPrintOpenMode'))$('lpPrintOpenMode').value=x.openMode||'preview';aggiornaEtichettaProgramma()}
 function salvaImpostazioniStampa(){const old=getPrintSettings();const x={font:val('lpPrintFont')||'Arial',size:val('lpPrintSize')||'10',margins:val('lpPrintMargins')||'14',accent:val('lpPrintAccent')||'palette',header:$('lpPrintHeader')?.checked!==false,footer:val('lpPrintFooter')||'LOCA PRO · Documento gestionale',pageNumbers:$('lpPrintPageNumbers')?.checked!==false,openMode:val('lpPrintOpenMode')||'preview',programPath:old.programPath||'',programName:old.programName||''};localStorage.setItem(PRINT_SETTINGS_KEY,JSON.stringify(x));aggiornaEtichettaProgramma();alert('Impostazioni delle stampe salvate. Verranno applicate a tutti i documenti.')}
 async function scegliProgrammaStampe(){if(!window.locaProDocuments?.chooseProgram)return alert('La scelta del programma è disponibile nella versione desktop di LOCA PRO.');const r=await window.locaProDocuments.chooseProgram();if(!r||r.canceled)return;const x=getPrintSettings();x.programPath=r.path||'';x.programName=r.name||'';localStorage.setItem(PRINT_SETTINGS_KEY,JSON.stringify(x));aggiornaEtichettaProgramma()}
-function documentoWordHtml(body){return documentoEsportazioneHtml(body)}
-function documentoEsportazioneHtml(body){const ps=getPrintSettings();const pageNumbers=ps.pageNumbers!==false?'counter(page)':'';return `<!doctype html><html><head><meta charset="utf-8"><title>Documento LOCA PRO</title><style>@page{size:A4;margin:${ps.margins}mm}*{box-sizing:border-box}body{font-family:${ps.font};font-size:${ps.size}pt;margin:0;color:#182033;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}table{width:100%;border-collapse:collapse}th,td{border:1px solid #d9dee7;padding:7px;text-align:left}img{max-width:180px}.pd-footer{margin-top:24px;border-top:1px solid #ccd3dd;padding-top:8px;font-size:8pt}.pd-page:after{content:' ${pageNumbers}'}.bill-page,.pd-page-wrap{page-break-after:always}.bill-page:last-child,.pd-page-wrap:last-child{page-break-after:auto}</style>
+function usaProgrammaPredefinitoStampe(){const x=getPrintSettings();x.programPath='';x.programName='';localStorage.setItem(PRINT_SETTINGS_KEY,JSON.stringify(x));aggiornaEtichettaProgramma();alert('LOCA PRO userà i programmi predefiniti di Windows per Word e PDF.')}
+function documentoWordHtml(body){return documentoEsportazioneHtml(body,'word')}
+function cssStampaAttivo(id){
+  const style=document.getElementById(id),sheet=style?.sheet;
+  if(!sheet)return style?.textContent||'';
+  const out=[];
+  const visit=rules=>{for(const rule of Array.from(rules||[])){
+    if(rule.type===CSSRule.STYLE_RULE||rule.type===CSSRule.PAGE_RULE||rule.type===CSSRule.FONT_FACE_RULE)out.push(rule.cssText);
+    else if(rule.type===CSSRule.MEDIA_RULE&&String(rule.conditionText||'').toLowerCase().includes('print'))visit(rule.cssRules);
+  }};
+  try{visit(sheet.cssRules)}catch(e){return style.textContent||''}
+  return out.join('\n');
+}
+function wordGridToTable(root,selector,widths,tableWidthPx,fullClass='',fullSpan=0){
+  root.querySelectorAll(selector).forEach(grid=>{
+    const table=document.createElement('table');
+    table.className=((grid.className||'')+' lp-word-grid').trim();
+    const resolvedTableWidth=Math.max(120,Math.round(Number(tableWidthPx)||688));
+    table.setAttribute('width',String(resolvedTableWidth));
+    table.style.width=resolvedTableWidth+'px';
+    table.style.tableLayout='fixed';
+    table.style.borderCollapse='collapse';
+    const tbody=document.createElement('tbody');
+    let row=document.createElement('tr'),used=0;
+    Array.from(grid.children).forEach(child=>{
+      const span=fullClass&&child.classList.contains(fullClass)?(fullSpan||widths.length):1;
+      if(used&&used+span>widths.length){tbody.appendChild(row);row=document.createElement('tr');used=0}
+      const cell=document.createElement('td');
+      const widthShare=widths.slice(used,used+span).reduce((sum,width)=>sum+Number(width||0),0);
+      cell.style.width=Math.max(24,Math.round(resolvedTableWidth*widthShare/100))+'px';
+      cell.style.verticalAlign='top';
+      cell.style.border='0';
+      cell.style.padding='0';
+      if(span>1)cell.colSpan=span;
+      cell.appendChild(child);
+      row.appendChild(cell);
+      used+=span;
+      if(used>=widths.length){tbody.appendChild(row);row=document.createElement('tr');used=0}
+    });
+    if(row.children.length)tbody.appendChild(row);
+    table.appendChild(tbody);
+    grid.replaceWith(table);
+  });
+}
+function larghezzaUtileWordPx(marginsMm){
+  const margin=Math.min(30,Math.max(8,Number(marginsMm)||14));
+  return Math.max(520,Math.round((210-(margin*2))*96/25.4));
+}
+function corpoWordCompatibile(body,pageWidthPx=688){
+  const doc=new DOMParser().parseFromString(`<div id="lpWordRoot">${body}</div>`,'text/html');
+  const root=doc.getElementById('lpWordRoot');
+  root.querySelectorAll('.no-print,button').forEach(el=>el.remove());
+  root.querySelectorAll('colgroup').forEach(el=>el.remove());
+  root.querySelectorAll('a').forEach(a=>{const span=doc.createElement('span');span.innerHTML=a.innerHTML;span.className=a.className||'';a.replaceWith(span)});
+  root.querySelectorAll('.bill-print-page,.pd-page-wrap,.contract-print').forEach(el=>{el.style.width=pageWidthPx+'px';el.style.maxWidth=pageWidthPx+'px'});
+  wordGridToTable(root,'.bill-head',[24,56,20],pageWidthPx);
+  wordGridToTable(root,'.bill-recipient-row',[55,45],pageWidthPx);
+  wordGridToTable(root,'.bill-info-grid',[34,33,33],pageWidthPx);
+  wordGridToTable(root,'.bill-payment-grid',[68,32],pageWidthPx,'wide',2);
+  wordGridToTable(root,'.bill-note-box',[20,80],pageWidthPx);
+  wordGridToTable(root,'.bill-sign-row',[50,50],pageWidthPx);
+  wordGridToTable(root,'.pd-header',[58,42],pageWidthPx);
+  wordGridToTable(root,'.pd-footer',[72,28],pageWidthPx);
+  wordGridToTable(root,'.cp-summary',[30,22,24,24],pageWidthPx);
+  wordGridToTable(root,'.cp-columns',[50,50],pageWidthPx);
+  wordGridToTable(root,'.cp-data',[50,50],Math.round(pageWidthPx*.48),'full',2);
+  root.querySelectorAll('.bp-table').forEach(table=>{
+    table.setAttribute('width',String(pageWidthPx));
+    table.style.width=pageWidthPx+'px';
+    table.style.tableLayout='fixed';
+    Array.from(table.rows||[]).forEach(row=>{
+      const cells=Array.from(row.cells||[]);
+      if(cells[0])cells[0].style.width=Math.round(pageWidthPx*.74)+'px';
+      if(cells[1]){cells[1].style.width=Math.round(pageWidthPx*.26)+'px';cells[1].style.textAlign='right';cells[1].style.whiteSpace='nowrap'}
+    });
+  });
+  root.querySelectorAll('.num').forEach(el=>{el.style.textAlign='right';el.style.whiteSpace='nowrap'});
+  root.querySelectorAll('.bill-print-page,.pd-page-wrap').forEach((el,i,all)=>{if(i<all.length-1)el.style.pageBreakAfter='always'});
+  return root.innerHTML;
+}
+function documentoEsportazioneHtml(body,formato='pdf'){const ps=getPrintSettings();const pageNumbers=ps.pageNumbers!==false?'counter(page)':'';const isWord=formato==='word';const wordPageWidth=larghezzaUtileWordPx(ps.margins);const exportBody=isWord?corpoWordCompatibile(body,wordPageWidth):body;const printCss=isWord?`${cssStampaAttivo('professional-print-styles')}\n${cssStampaAttivo('bill-modern-layout')}`:'';return `<!doctype html><html><head><meta charset="utf-8"><title>Documento LOCA PRO</title><style>@page{size:A4 portrait;margin:${ps.margins}mm}*{box-sizing:border-box}html,body{width:100%;margin:0;padding:0}body{font-family:${ps.font};font-size:${ps.size}pt;color:#182033;background:#fff;-webkit-print-color-adjust:exact;print-color-adjust:exact}table{border-collapse:collapse}th,td{padding:7px;text-align:left}img{max-width:180px;height:auto}.pd-footer{margin-top:24px;border-top:1px solid #ccd3dd;padding-top:8px;font-size:8pt}.pd-page:after{content:' ${pageNumbers}'}.bill-page,.pd-page-wrap{page-break-after:always}.bill-page:last-child,.pd-page-wrap:last-child{page-break-after:auto}${isWord?`.print-document{display:block!important;width:${wordPageWidth}px!important}.lp-word-grid{border-collapse:collapse!important;table-layout:fixed!important}.lp-word-grid>tbody>tr>td{border:0!important;padding:0!important;vertical-align:top!important}.bp-table{width:${wordPageWidth}px!important;table-layout:fixed!important;border-collapse:collapse!important}.bp-table th:last-child,.bp-table td:last-child{text-align:right!important;white-space:nowrap!important}.num{text-align:right!important;white-space:nowrap!important;font-variant-numeric:tabular-nums}.bill-print-page{width:${wordPageWidth}px!important;page-break-inside:avoid}.contract-print{width:${wordPageWidth}px!important;height:auto!important;overflow:visible!important}`:''}</style>${isWord?`<style>${printCss}</style>`:`
 <style id="locapro-all-tables-fit-311">
 /* LOCA PRO 3.11 — tutte le tabelle operative complete, senza scorrimento orizzontale */
 .page .tablewrap,
@@ -4186,10 +4563,12 @@ function documentoEsportazioneHtml(body){const ps=getPrintSettings();const pageN
 }
 </style>
 
-</head><body>${body}</body></html>`}
+<style>${document.getElementById('professional-print-styles')?.textContent||''}</style>
+<style>${document.getElementById('bill-modern-layout')?.textContent||''}</style>`}
+</head><body><div class="print-document" style="display:block${isWord?`;width:${wordPageWidth}px`:''}">${exportBody}</div></body></html>`}
 function downloadBlobFile(name,content,type){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([content],{type}));a.download=name;document.body.appendChild(a);a.click();setTimeout(()=>{URL.revokeObjectURL(a.href);a.remove()},1000)}
-async function apriDocumentoPreparato(formato,body,nome){body=body||window.lpUltimaStampaHtml||localStorage.getItem('locapro_last_print_html');if(!body)return alert('Prima genera un documento.');const html=documentoEsportazioneHtml(body),ps=getPrintSettings();if(window.locaProDocuments?.generateAndOpen){const r=await window.locaProDocuments.generateAndOpen({html,format:formato,filename:nome||'documento_loca_pro',programPath:ps.programPath||''});if(!r?.ok)alert(r?.error||'Non è stato possibile aprire il documento.');return r}if(formato==='word'){downloadBlobFile((nome||'documento_loca_pro')+'.doc','\ufeff'+html,'application/msword');return}alert('L’apertura automatica del PDF è disponibile nella versione desktop di LOCA PRO.')}
-async function esportaUltimaStampaWord(){return apriDocumentoPreparato('word',null,'documento_loca_pro')}
+async function apriDocumentoPreparato(formato,body,nome,wordData=null){body=body||window.lpUltimaStampaHtml||localStorage.getItem('locapro_last_print_html');if(!body)return alert('Prima genera un documento.');const ps=getPrintSettings(),html=documentoEsportazioneHtml(body,formato);if(window.locaProDocuments?.generateAndOpen){const r=await window.locaProDocuments.generateAndOpen({html,format:formato,filename:nome||'documento_loca_pro',programPath:ps.programPath||'',settings:{font:ps.font,size:ps.size,margins:ps.margins},wordData:formato==='word'?wordData:null});if(!r?.ok)alert(r?.error||'Non è stato possibile aprire il documento.');return r}if(formato==='word'){downloadBlobFile((nome||'documento_loca_pro')+'.doc','\ufeff'+html,'application/msword');return}alert('L’apertura automatica del PDF è disponibile nella versione desktop di LOCA PRO.')}
+async function esportaUltimaStampaWord(){return apriDocumentoPreparato('word',null,'documento_loca_pro',window.lpUltimaStampaWordData)}
 async function apriUltimoPdf(){return apriDocumentoPreparato('pdf',null,'documento_loca_pro')}
 async function scegliFormatoApertura(){const scelta=(prompt('Come vuoi aprire la stampa? Scrivi PDF, WORD oppure ANTEPRIMA.','PDF')||'').trim().toLowerCase();if(scelta==='word')return'word';if(scelta==='pdf')return'pdf';return'preview'}
 setTimeout(caricaImpostazioniStampa,0);
@@ -4266,7 +4645,17 @@ function duplicaUnita(id){
 
 function renderAll(){aggiornaModalitaBolletta();renderCalendar();caricaAnagraficaStudio();renderDashboard();renderControlloDati();renderContratti();renderProprietari();renderConduttori();renderScadenziario();popolaAnniIstatMensile();renderIstatMensile();renderIstatSelect();renderBollettaSelect()}$('meseScad').value=new Date().toISOString().slice(0,7);popolaAnniIstatMensile();renderAll();
 </script>
-<div id="printDocument" class="print-document"><button class="pd-screen-close" onclick="chiudiAnteprimaStampa()">Chiudi anteprima</button><div class="pd-paper" id="printPaper"></div></div>
+<div id="printDocument" class="print-document">
+  <div class="pd-preview-toolbar">
+    <div class="pd-preview-title">Anteprima LOCA PRO<small>Apri il PDF per salvarlo o stamparlo.</small></div>
+    <div class="pd-preview-actions">
+      <button onclick="apriAnteprimaWord()">Apri in Word</button>
+      <button class="primary" onclick="apriAnteprimaPdf()">Apri PDF / Stampa</button>
+      <button class="pd-screen-close" onclick="chiudiAnteprimaStampa()">Chiudi</button>
+    </div>
+  </div>
+  <div class="pd-paper" id="printPaper"></div>
+</div>
 
 <script id="locapro-apple-home-js">
 let dashboardDay=new Date();
