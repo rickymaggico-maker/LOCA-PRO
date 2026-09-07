@@ -1,7 +1,27 @@
 {
   "Version": "0.4.2",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.2.exe",
+  "Url": "",
   "Sha256": "bce607c137ad49340d179b9487f5d0a399e0326deb992222e0319895b39798fe",
-  "Notes": "Nuovo logo ufficiale StudioLink. Installazione e aggiornamenti nella cartella personale dell'utente, senza privilegi amministratore. Restano inclusi faccina fissa e orari nelle attività.",
-  "Parts": []
+  "Notes": "Nuovo logo ufficiale StudioLink, faccina fissa con occhi animati, orari nelle attività e funzionamento nella cartella personale senza privilegi amministratore.",
+  "Parts": [
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-01.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-02.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-03.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-04.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-05.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-06.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-07.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-mid01.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-mid02.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-mid03.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/stable-0.4.2-09.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-core01.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-core02.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-core03.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-core04.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-tail01.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042v3-tail02.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042-D1.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/final042-D2.txt"
+  ]
 }
