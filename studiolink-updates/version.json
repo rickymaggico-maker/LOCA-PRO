@@ -1,0 +1,16 @@
+{
+  "Version": "0.4.1",
+  "Url": "",
+  "Sha256": "ead25ba059da94ae9f93203172415dd19450a4fccb6501a0b64f00095635db17",
+  "Notes": "Faccina fissa sul bordo, occhi grandi animati e orari nelle attività. Aggiornamenti automatici attivi.",
+  "Parts": [
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part01.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part02.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part03.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part04.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part05.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part06.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part07.txt",
+    "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/0.4.1-part08.txt"
+  ]
+}
