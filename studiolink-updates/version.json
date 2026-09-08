@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.5",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.5.exe",
-  "Sha256": "7fc1480fc5669c5d2261ecf95bbb27e805369797f184b69259f0021092f80c24",
-  "Notes": "Nuova faccina robot bianca e blu ispirata al design dei piccoli robot da console: visore nero, occhi azzurri animati, antenna luminosa e look più espressivo.",
+  "Version": "0.4.6",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.exe",
+  "Sha256": "8e09030f0b1ffb0fdb193ca6acefa49daba28488823447527e9270e69702ad8b",
+  "Notes": "Faccina 0.4.6: eliminato il contorno rosa con trasparenza per-pixel Windows; nuove espressioni Normale, Felice, Attenzione, Parlato e Riposo collegate agli avvisi e alla voce.",
   "Parts": []
 }
