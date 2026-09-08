@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.3",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.3.exe",
-  "Sha256": "e59cf7d4e03dd7d62a50366bfe0de380411e2e7fc4495aa8b3761a1ad7a32c68",
-  "Notes": "Avvisi vocali locali, notifica desktop, promemoria prima e all'ora esatta, riepilogo giornaliero e controlli rapidi dalla faccina.",
+  "Version": "0.4.4",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.4.exe",
+  "Sha256": "bf8948e1ac55603864c42f0c65894c9fb2d1891d4d2fafab903cff0f32936469",
+  "Notes": "Interfaccia ripulita: rimosse le scritte decorative e tecniche non utili; l'azzurro resta solo come accento grafico.",
   "Parts": []
 }
