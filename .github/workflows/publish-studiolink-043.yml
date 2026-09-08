@@ -29,3 +29,5 @@ jobs:
           git add studiolink-updates/StudioLink-0.4.3.exe
           git diff --cached --quiet || git commit -m 'Publish verified StudioLink 0.4.3 binary'
           git push
+
+# trigger publish after workflow is present on main
