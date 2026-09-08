@@ -1,0 +1,31 @@
+name: Publish StudioLink 0.4.3
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-studiolink-043.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified StudioLink 0.4.3 build
+        run: |
+          curl -fL 'https://sdmntprpolandcentral.oaiusercontent.com/files/00000000-19ac-820a-9307-0f4147d91f10/raw?se=2026-09-08T09%3A14%3A54Z&sp=r&sv=2026-02-06&sr=b&scid=4b98cee8-a5d0-5ba4-b765-4ab82069f542&skoid=b5d2651b-fef3-4bb0-a03b-ca59cc22929b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-08T07%3A26%3A59Z&ske=2026-09-09T07%3A26%3A59Z&sks=b&skv=2026-02-06&sig=lXM5l%2Bj8zXv0/zBWzLnwpaaEOjNU5U34pLnEwhsP5ag%3D' -o StudioLink-0.4.3-build.zip
+          unzip -o StudioLink-0.4.3-build.zip -d .studiolink043
+          test -f .studiolink043/StudioLink.exe
+          echo 'e59cf7d4e03dd7d62a50366bfe0de380411e2e7fc4495aa8b3761a1ad7a32c68  .studiolink043/StudioLink.exe' | sha256sum -c -
+      - name: Publish binary
+        run: |
+          mkdir -p studiolink-updates
+          cp .studiolink043/StudioLink.exe studiolink-updates/StudioLink-0.4.3.exe
+          git config user.name 'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add studiolink-updates/StudioLink-0.4.3.exe
+          git diff --cached --quiet || git commit -m 'Publish verified StudioLink 0.4.3 binary'
+          git push
