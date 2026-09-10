@@ -1,0 +1,30 @@
+name: Publish StudioLink 0.4.6.1
+
+on:
+  push:
+    paths:
+      - '.github/workflows/publish-studiolink-0461.yml'
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified StudioLink 0.4.6.1 build
+        run: |
+          curl -L --fail --retry 3 'https://sdmntprnortheu.oaiusercontent.com/files/00000000-fd30-81f4-a8e0-2735a8eb3104/raw?se=2026-09-10T11%3A35%3A25Z&sp=r&sv=2026-02-06&sr=b&scid=701877b0-0e71-573f-9d7a-5fb8f7363c55&skoid=b5d2651b-fef3-4bb0-a03b-ca59cc22929b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-10T07%3A57%3A25Z&ske=2026-09-11T07%3A57%3A25Z&sks=b&skv=2026-02-06&sig=%2BaQiexs0N8ic0wLWELKGkklF9kqmeylKVzYgcyo3OtM%3D' -o /tmp/studiolink.zip
+          mkdir -p /tmp/studiolink
+          unzip -o /tmp/studiolink.zip -d /tmp/studiolink
+          echo '2e65888cce37f8bc2377252665070e77e8f544bb4a1180de342d77ff19795653  /tmp/studiolink/StudioLink.exe' | sha256sum -c -
+      - name: Publish binary
+        run: |
+          mkdir -p studiolink-updates
+          cp /tmp/studiolink/StudioLink.exe studiolink-updates/StudioLink-0.4.6.1.exe
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studiolink-updates/StudioLink-0.4.6.1.exe
+          git commit -m "Publish StudioLink 0.4.6.1 exit hotfix"
+          git push
