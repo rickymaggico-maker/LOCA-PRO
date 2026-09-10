@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.6",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.exe",
-  "Sha256": "8e09030f0b1ffb0fdb193ca6acefa49daba28488823447527e9270e69702ad8b",
-  "Notes": "Faccina 0.4.6: eliminato il contorno rosa con trasparenza per-pixel Windows; nuove espressioni Normale, Felice, Attenzione, Parlato e Riposo collegate agli avvisi e alla voce.",
+  "Version": "0.4.7",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.7.exe",
+  "Sha256": "cfc1ef7d201489988e7803b64a17ab8de8eef5a6cd3850f3130e98a19a23e062",
+  "Notes": "Faccina 0.4.7: mini robot animato nella barra di Windows vicino all'orologio, con blink, movimento occhi, luce pulsante e reazioni agli avvisi/voce. La faccina grande sul desktop resta attivabile dal menu.",
   "Parts": []
 }
