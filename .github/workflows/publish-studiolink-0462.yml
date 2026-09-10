@@ -1,0 +1,40 @@
+name: Publish StudioLink 0.4.6.2
+on:
+  push:
+    branches: [main]
+    paths:
+      - '.github/workflows/publish-studiolink-0462.yml'
+permissions:
+  contents: write
+jobs:
+  publish:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Download verified StudioLink 0.4.6.2 build
+        shell: pwsh
+        run: |
+          $url = 'https://sdmntprdenmarkeast.oaiusercontent.com/files/00000000-df10-8210-ac1f-6ec5884928a6/raw?se=2026-09-10T12%3A13%3A30Z&sp=r&sv=2026-02-06&sr=b&scid=02c6d6ee-8bd9-5ed3-a7bd-6604e241dfea&skoid=b5d2651b-fef3-4bb0-a03b-ca59cc22929b&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2026-09-10T04%3A16%3A37Z&ske=2026-09-11T04%3A16%3A37Z&sks=b&skv=2026-02-06&sig=xnttjHZae7UMtDQwvAjyK3d7n0so2mZteqzpoX0Y5zk%3D'
+          Invoke-WebRequest -Uri $url -OutFile 'build.zip'
+          Expand-Archive -Path 'build.zip' -DestinationPath 'build' -Force
+          $exe = 'build\StudioLink.exe'
+          $hash = (Get-FileHash $exe -Algorithm SHA256).Hash.ToLowerInvariant()
+          if ($hash -ne 'd4bde4e522734bb098236baac7c27b7f6ca0724d8a1f67aa89884caba991e92e') { throw "SHA mismatch: $hash" }
+          New-Item -ItemType Directory -Force -Path 'studiolink-updates' | Out-Null
+          Copy-Item $exe 'studiolink-updates\StudioLink-0.4.6.2.exe' -Force
+          $manifest = [ordered]@{
+            Version = '0.4.6.2'
+            Url = 'https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.2.exe'
+            Sha256 = 'd4bde4e522734bb098236baac7c27b7f6ca0724d8a1f67aa89884caba991e92e'
+            Notes = 'Versione stabile 0.4.6.2: la faccina resta identica ma dopo 10 secondi di inattivita sfuma dolcemente al 20%. Mouse, clic, voce e promemoria la riportano subito al 100%. Dal tasto destro e disponibile Mantieni sempre visibile.'
+            Parts = @()
+          }
+          $manifest | ConvertTo-Json -Depth 3 | Set-Content 'studiolink-updates\version.json' -Encoding UTF8
+      - name: Publish binary and update channel
+        shell: pwsh
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add studiolink-updates/StudioLink-0.4.6.2.exe studiolink-updates/version.json
+          git commit -m "Release StudioLink 0.4.6.2 idle fade"
+          git push
