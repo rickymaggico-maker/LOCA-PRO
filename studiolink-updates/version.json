@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.6",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.exe",
-  "Sha256": "8e09030f0b1ffb0fdb193ca6acefa49daba28488823447527e9270e69702ad8b",
-  "Notes": "Versione stabile 0.4.6: faccina desktop con trasparenza pulita, menu completo, espressioni Normale/Felice/Attenzione/Parlato/Riposo, avvisi vocali e funzioni attività/orari.",
+  "Version": "0.4.6.1",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.1.exe",
+  "Sha256": "2e65888cce37f8bc2377252665070e77e8f544bb4a1180de342d77ff19795653",
+  "Notes": "Hotfix stabile 0.4.6.1: identica alla 0.4.6 nelle funzioni e nella grafica; rende affidabile l'uscita completa di StudioLink e rinomina il comando della faccina in 'Esci da StudioLink'.",
   "Parts": []
 }
