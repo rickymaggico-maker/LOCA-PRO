@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.9",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.9.exe",
-  "Sha256": "921f99478fbdcf50ca567a26885786360f088299831137815ecb82c3afe56624",
-  "Notes": "Faccina 0.4.9: nuovo robot animato sempre visibile nella barra principale di Windows. Il pulsante fisso apre StudioLink, continua con blink, movimento occhi e reazioni a voce/promemoria. Inclusi anche controllo aggiornamenti periodico e comando manuale.",
+  "Version": "0.4.10",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.10.exe",
+  "Sha256": "9d78e41aa42ed7c398750540261524d8cca137bc6d65cd3a3c783b3dbc3b1b21",
+  "Notes": "Correzione barra Windows: la faccina animata viene ora registrata esplicitamente con la shell come pulsante della taskbar principale, invece di dipendere dall'icona nascosta sotto la freccetta. Mantiene blink, occhi animati e reazioni a voce/promemoria.",
   "Parts": []
 }
