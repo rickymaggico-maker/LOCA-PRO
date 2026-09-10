@@ -1,7 +1,7 @@
 {
-  "Version": "0.4.6.1",
-  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.1.exe",
-  "Sha256": "2e65888cce37f8bc2377252665070e77e8f544bb4a1180de342d77ff19795653",
-  "Notes": "Hotfix stabile 0.4.6.1: identica alla 0.4.6 nelle funzioni e nella grafica; rende affidabile l'uscita completa di StudioLink e rinomina il comando della faccina in 'Esci da StudioLink'.",
+  "Version": "0.4.6.2",
+  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.2.exe",
+  "Sha256": "d4bde4e522734bb098236baac7c27b7f6ca0724d8a1f67aa89884caba991e92e",
+  "Notes": "Versione stabile 0.4.6.2: la faccina resta identica ma dopo 10 secondi di inattivita sfuma dolcemente al 20%. Mouse, clic, voce e promemoria la riportano subito al 100%. Dal tasto destro e disponibile Mantieni sempre visibile.",
   "Parts": []
 }
