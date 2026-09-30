@@ -1,0 +1,36 @@
+name: Pubblica pacchetto StudioLink
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'studiolink-updates/publish-url.txt'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Scarica e verifica pacchetto
+        run: |
+          set -euo pipefail
+          URL=$(cat studiolink-updates/publish-url.txt)
+          curl -fL "$URL" -o /tmp/studiolink.zip
+          mkdir -p /tmp/studiolink
+          unzip -q /tmp/studiolink.zip -d /tmp/studiolink
+          test -f /tmp/studiolink/StudioLink.exe
+          cp /tmp/studiolink/StudioLink.exe studiolink-updates/StudioLink-0.4.6.3.exe
+          SHA=$(sha256sum studiolink-updates/StudioLink-0.4.6.3.exe | awk '{print $1}')
+          test "$SHA" = "9142a47789194183dac89971c01a79778f5267cc6b360e1babb0aa4b8f917bf6"
+          printf '{\n  "Version": "0.4.6.3",\n  "Url": "https://raw.githubusercontent.com/rickymaggico-maker/LOCA-PRO/main/studiolink-updates/StudioLink-0.4.6.3.exe",\n  "Sha256": "%s",\n  "Notes": "StudioLink 0.4.6.3: nuova voce italiana maschile in stile assistente AI, timbro più profondo, saluti dinamici e comando Prova voce assistente.",\n  "Parts": []\n}\n' "$SHA" > studiolink-updates/version.json
+      - name: Pubblica nel canale aggiornamenti
+        run: |
+          git config user.name "StudioLink Updater"
+          git config user.email "actions@users.noreply.github.com"
+          git add studiolink-updates/StudioLink-0.4.6.3.exe studiolink-updates/version.json
+          git commit -m "Pubblica StudioLink 0.4.6.3" || exit 0
+          git push
